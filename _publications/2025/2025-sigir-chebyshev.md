@@ -4,6 +4,7 @@ date:           2025-07-13 00:01:00 +0900
 selected:       true
 pub:            "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)"
 pub_date:       "2025"
+type:           "Conference"
 abstract: >-
   We propose a graph spectral filtering approach leveraging Chebyshev polynomial interpolation
   for collaborative filtering in recommendation systems. Our method efficiently captures
