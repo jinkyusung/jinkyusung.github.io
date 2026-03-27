@@ -8,7 +8,7 @@
                     {% for item in site.data.profile.education %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
-                        <div class="d-flex text-muted">
+                        <div class="pub-meta d-flex text-muted">
                             <div>{{ item.position }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                         </div>
@@ -31,8 +31,8 @@
                     {% for item in site.data.experience %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
-                        <div class="text-muted">{{ item.dept }}</div>
-                        <div class="d-flex text-muted">
+                        <div class="pub-meta text-muted">{{ item.dept }}</div>
+                        <div class="pub-meta d-flex text-muted">
                             <div>{{ item.position }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                         </div>
@@ -57,9 +57,9 @@
                         <div class="d-flex">
                             <div>
                                 <strong>{{ item.name }}</strong>
-                                {% if item.detail %}<br/><span class="text-muted">{{ item.detail }}</span>{% endif %}
+                                {% if item.detail %}<div class="pub-meta text-muted">{{ item.detail }}</div>{% endif %}
                             </div>
-                            <div class="ml-auto no-break text-muted"><em>{{ item.date }}</em></div>
+                            <div class="pub-meta ml-auto no-break text-muted"><em>{{ item.date }}</em></div>
                         </div>
                     </li>
                     {% endfor %}
@@ -80,7 +80,7 @@
                 <div class="mb-2"><strong>Program Committee Member</strong></div>
                 <ul class="list-unstyled mb-0">
                     {% for item in site.data.academic_service.program_committee %}
-                    <li class="d-flex mb-2 text-muted">
+                    <li class="pub-meta d-flex mb-2 text-muted">
                         <div>{{ item.ordinal }} {{ item.venue }}</div>
                         <div class="ml-auto no-break"><em>{{ item.year }}</em></div>
                     </li>
@@ -103,11 +103,11 @@
                     {% for item in site.data.research_grants %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
-                        <div class="d-flex text-muted">
+                        <div class="pub-meta d-flex text-muted">
                             <div>{{ item.role }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                         </div>
-                        <div class="text-muted">{{ item.amount }}</div>
+                        <div class="pub-meta text-muted">{{ item.amount }}</div>
                     </li>
                     {% endfor %}
                 </ul>
