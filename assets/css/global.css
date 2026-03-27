@@ -1,25 +1,36 @@
 @charset "utf-8";
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     padding-top: 5.0rem;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     font-weight: 700;
 }
 
 .card {
-    border-radius: 0.8rem!important;
+    border-radius: 0.8rem !important;
 }
 
 .card-img-overlay {
-    border-radius: 0.8rem!important;
+    border-radius: 0.8rem !important;
 }
 
 .rounded-xl {
-    border-radius: 0.8rem!important;
+    border-radius: 0.8rem !important;
 }
 
 .rounded-xl-bottom {
@@ -92,11 +103,10 @@ div.lazy {
 
 /* Page width: ~20% narrower than container-lg (960px → 768px) */
 .container-narrow {
-    max-width: 768px;
+    max-width: 720px;
 }
 
 /* Publication metadata: between .small (0.8rem) and body (1rem) */
 .pub-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
-
