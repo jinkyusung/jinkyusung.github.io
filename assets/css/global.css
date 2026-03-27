@@ -90,3 +90,13 @@ div.lazy {
     font-family: Source Code Pro, monospace;
 }
 
+/* Page width: ~20% narrower than container-lg (960px → 768px) */
+.container-narrow {
+    max-width: 768px;
+}
+
+/* Publication metadata: between .small (0.8rem) and body (1rem) */
+.pub-meta {
+    font-size: 0.9rem;
+}
+

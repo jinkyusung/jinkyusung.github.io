@@ -3,9 +3,9 @@
 <div class="row no-gutters {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
     <div class="col p-3">
         <p class="mt-0 mb-1"><strong>{{ item.title }}</strong>{{ item.pub_last }}</p>
-        <p class="mt-0 mb-0 small text-muted">{% include widgets/author_list.html authors=item.authors %}</p>
-        <p class="mt-0 mb-1 small text-muted">{{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }}, {{ item.pub_date }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
-        <p class="mb-0 lh-125">
+        <p class="mt-0 mb-0 pub-meta text-muted">{% include widgets/author_list.html authors=item.authors %}</p>
+        <p class="mt-0 mb-1 pub-meta text-muted">{{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }}, {{ item.pub_date }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+        <p class="mb-0 pub-meta">
             {% if item.abstract %}
             <a class="text-muted" data-toggle="collapse" href="#abstract-{{ item_id }}" role="button" aria-expanded="false">[Abstract]</a>
             {% endif %}
@@ -19,7 +19,7 @@
         </p>
         {% if item.abstract %}
         <div class="collapse mt-2" id="abstract-{{ item_id }}">
-            <p class="small text-muted mb-0">{{ item.abstract }}</p>
+            <p class="pub-meta text-muted mb-0">{{ item.abstract }}</p>
         </div>
         {% endif %}
     </div>
