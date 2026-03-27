@@ -45,32 +45,3 @@ education:
     B.S.E. in Computer Science <br/>
     B.S. in Mathematics
   date: Feb. 2019 – Feb. 2025
-
-experience:
-- name: Seoul National University
-  position: Full-time Research Intern
-  dept: Graduate School of Data Science
-  date: Jun. 2024 – Feb. 2025
-- name: Korea Institute of Science and Technology
-  position: Full-time Research Intern
-  dept: Sensor System Research Center
-  date: Dec. 2023 – Feb. 2024
-- name: Sogang University
-  position: Part-time Research Intern
-  dept: Research and Business Development Foundation
-  date: May. 2023 – Aug. 2023
-
-awards:
-- name: "Dean's List, Top 1% High Scholastic Achievement — College of Engineering, Sogang University"
-  date: Fall 2022
-
-research_grant:
-  name: "Academic Research Support Program for Science and Engineering (NRF Korea)"
-  role: Principal Investigator
-  amount: "KRW 12,000,000"
-  date: "Sep. 2025 – Aug. 2026"
-
-academic_service:
-  program_committee:
-    - "ICML 2026 (43rd International Conference on Machine Learning)"
-    - "CIKM 2025 (35th ACM International Conference on Information and Knowledge Management)"

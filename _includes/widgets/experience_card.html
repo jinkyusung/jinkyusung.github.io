@@ -3,6 +3,7 @@
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <div class="row" data-masonry='{"percentPosition": true }'>
+
                     {% if site.data.profile.education %}
                     <div class="col-lg-6">
                         <div class="mx-2 my-1">
@@ -27,22 +28,18 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.experience %}
+                    {% if site.data.experience %}
                     <div class="col-lg-6">
                         <div class="mx-2 my-1">
                             <h6>Experience</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.experience %}
-                                <li class="media mb-1">
-                                    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;"
-                                        class="mr-1 mt-1">
-                                    <div class="media-body">
-                                        <div>{{ item.name }}</div>
-                                        <div class="small">{{ item.dept }}</div>
-                                        <div class="small d-flex">
-                                            <div>{{ item.position }}</div>
-                                            <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
-                                        </div>
+                                {% for item in site.data.experience %}
+                                <li class="mb-2">
+                                    <div><strong>{{ item.name }}</strong></div>
+                                    <div class="small">{{ item.dept }}</div>
+                                    <div class="small d-flex">
+                                        <div>{{ item.position }}</div>
+                                        <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
                                     </div>
                                 </li>
                                 {% endfor %}
@@ -51,15 +48,18 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.awards %}
+                    {% if site.data.awards %}
                     <div class="col-lg-6">
                         <div class="mx-2 my-1">
                             <h6>Honors &amp; Awards</h6>
                             <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
+                                {% for item in site.data.awards %}
                                 <li>
                                     <div class="d-flex">
-                                        <div>{{ item.name }}</div>
+                                        <div>
+                                            {{ item.name }}
+                                            {% if item.detail %}<br/><span class="text-muted">{{ item.detail }}</span>{% endif %}
+                                        </div>
                                         <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
                                     </div>
                                 </li>
@@ -69,15 +69,15 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.academic_service %}
+                    {% if site.data.academic_service %}
                     <div class="col-lg-6">
                         <div class="mx-2 my-1">
                             <h6>Academic Service</h6>
-                            {% if site.data.profile.academic_service.program_committee %}
+                            {% if site.data.academic_service.program_committee %}
                             <div class="small mb-1"><strong>Program Committee Member</strong></div>
                             <ul class="list small pl-3 mb-1">
-                                {% for venue in site.data.profile.academic_service.program_committee %}
-                                <li>{{ venue }}</li>
+                                {% for item in site.data.academic_service.program_committee %}
+                                <li>{{ item.ordinal }} {{ item.venue }}, {{ item.year }}</li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
@@ -85,28 +85,27 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.research_grant %}
+                    {% if site.data.research_grants %}
                     <div class="col-lg-6">
                         <div class="mx-2 my-1">
                             <h6>Research Grant</h6>
                             <ul class="list-unstyled mb-1">
-                                <li>
-                                    <div class="small"><strong>{{ site.data.profile.research_grant.name }}</strong>
-                                    </div>
+                                {% for item in site.data.research_grants %}
+                                <li class="mb-1">
+                                    <div class="small"><strong>{{ item.name }}</strong></div>
                                     <div class="small d-flex">
-                                        <div>{{ site.data.profile.research_grant.role }}</div>
-                                        <div class="ml-auto mt-auto no-break"><em>{{
-                                                site.data.profile.research_grant.date }}</em></div>
+                                        <div>{{ item.role }}</div>
+                                        <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
                                     </div>
-                                    <div class="small text-muted">{{ site.data.profile.research_grant.amount }}</div>
+                                    <div class="small text-muted">{{ item.amount }}</div>
                                 </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
                     {% endif %}
 
                 </div>
-
             </div>
         </div>
     </div>
