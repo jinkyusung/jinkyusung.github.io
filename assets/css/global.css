@@ -101,12 +101,13 @@ div.lazy {
     font-family: Source Code Pro, monospace;
 }
 
-/* Page width: ~20% narrower than container-lg (960px → 768px) */
+/* Narrower than Bootstrap container-lg: fills to 720px, shrinks responsively on small viewports */
 .container-narrow {
-    max-width: 768px;
+    width: 100%;
+    max-width: 720px;
 }
 
 /* Content level: one step smaller than parent title (≈87.5% of parent, same ratio as Bootstrap .small) */
 .pub-meta {
-    font-size: 0.875em;
+    font-size: 0.90em;
 }
