@@ -104,7 +104,7 @@ div.lazy {
 /* Narrower than Bootstrap container-lg: fills to 720px, shrinks responsively on small viewports */
 .container-narrow {
     width: 100%;
-    max-width: 768px;
+    max-width: 740px !important;
 }
 
 /* Content level: one step smaller than parent title (≈87.5% of parent, same ratio as Bootstrap .small) */
