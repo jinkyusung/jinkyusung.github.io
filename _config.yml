@@ -28,3 +28,5 @@ exclude:
 collections:
   publications:
     output: false
+  showcase:
+    output: false
