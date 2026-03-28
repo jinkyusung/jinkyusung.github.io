@@ -57,8 +57,8 @@ h6,
 .glass-navbar {
     background: rgba(255, 255, 255, 0.5) !important;
     /* Increased opacity for clear readability */
-    backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
-    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
+    backdrop-filter: blur(30px) saturate(400%) brightness(100%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(400%) brightness(100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.05),
