@@ -40,8 +40,9 @@ $(function () {
         $grid.masonry('layout');
     });
     // Glass navbar scroll effect
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 10) {
+    const updateNavbar = function() {
+        const topOfScreen = $(window).scrollTop();
+        if (topOfScreen > 10) {
             $('.glass-navbar').addClass('scrolled');
         } else {
             $('.glass-navbar').removeClass('scrolled');
@@ -51,12 +52,18 @@ $(function () {
         const profileName = $('#profile-name-container');
         if (profileName.length) {
             const bottomOfName = profileName.offset().top + profileName.outerHeight();
-            const topOfScreen = $(window).scrollTop();
             if (topOfScreen > bottomOfName) {
                 $('.navbar-brand').addClass('show-name');
             } else {
                 $('.navbar-brand').removeClass('show-name');
             }
+        } else {
+            $('.navbar-brand').addClass('show-name');
         }
+    };
+
+    updateNavbar();
+    $(window).scroll(function() {
+        updateNavbar();
     });
 })
