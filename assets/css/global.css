@@ -64,7 +64,6 @@ h6,
         0 4px 20px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow: hidden;
     min-height: 2.8rem; /* Reduced height (3.5rem * 0.8) */
 }
 
@@ -102,7 +101,11 @@ h6,
     opacity: 0;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Remove absolute positioning here to allow natural vertical centering from the flex parent */
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    white-space: nowrap;
 }
 
 .glass-navbar .navbar-brand.show-name {
@@ -137,6 +140,19 @@ h6,
     background: rgba(0, 0, 0, 0.04);
     transform: translateY(-1px);
 }
+
+/* Ensure vertical alignment for links and proper spacing on mobile */
+@media (max-width: 575.98px) {
+    .navbar-collapse {
+        margin-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+    .glass-navbar .nav-link {
+        padding: 0.8rem 1rem !important;
+        text-align: center;
+    }
+}
+
 
 .two-bars {
     display: flex;
