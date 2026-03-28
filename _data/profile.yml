@@ -3,14 +3,13 @@ navbar_name: "Jinkyu Sung"
 
 positions:
 - name: Ph.D. Student in Data Science
-- name: Seoul National University (VIPLab)
-
+  dept: Seoul National University
 email: "jinkyusung@snu.ac.kr"
-# cv_link: link-to-your-cv-file
 gscholar: -JwproEAAAAJ&hl
 github: jinkyusung
 linkedin: jinkyusung
 orcid: 0009-0007-6122-7638
+# cv_link: link-to-your-cv-file
 
 short_bio_text_justify: false
 short_bio: >-
