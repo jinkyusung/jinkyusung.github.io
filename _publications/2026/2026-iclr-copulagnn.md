@@ -13,4 +13,5 @@ authors:
   - Joonseok Lee
 links:
   Paper: https://openreview.net/pdf?id=U7tR3lCRr5
+  GitHub: https://github.com/jinkyusung/CopulaLSP
 ---
