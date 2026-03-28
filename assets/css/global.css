@@ -57,14 +57,15 @@ h6,
 .glass-navbar {
     background: rgba(255, 255, 255, 0.5) !important;
     /* Increased opacity for clear readability */
-    backdrop-filter: blur(20px) saturate(500%) brightness(100%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(500%) brightness(100%) !important;
+    backdrop-filter: blur(10px) saturate(500%) brightness(100%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(500%) brightness(100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    min-height: 2.8rem; /* Reduced height (3.5rem * 0.8) */
+    min-height: 2.8rem;
+    /* Reduced height (3.5rem * 0.8) */
 }
 
 /* Shimmer/Refraction Effect */
@@ -147,6 +148,7 @@ h6,
         margin-top: 0.5rem;
         padding-bottom: 1rem;
     }
+
     .glass-navbar .nav-link {
         padding: 0.8rem 1rem !important;
         text-align: center;
