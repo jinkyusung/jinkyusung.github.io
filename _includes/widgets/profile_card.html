@@ -4,7 +4,10 @@
             <div class="card-body p-5">
                 <div class="row">
                     <div class="col">
-                        <div class="d-flex">
+                        <div class="d-flex align-items-center">
+                            {% if site.data.profile.portrait_url %}
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.portrait_caption }}" class="profile-portrait mr-4">
+                            {% endif %}
                             <div class="h1 font-weight-normal">
                                 {{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small>
                             </div>

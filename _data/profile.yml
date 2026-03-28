@@ -18,8 +18,8 @@ short_bio: >-
     and <strong>Mathematical Analysis for Machine Learning</strong>.
   </p>
 
-# portrait_url: (no photo)
-# portrait_caption: (no photo)
+portrait_url: /assets/images/photos/selfie.jpeg
+portrait_caption: Jinkyu Sung
 
 education:
 - name: Seoul National University
