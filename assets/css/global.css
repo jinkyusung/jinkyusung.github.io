@@ -65,6 +65,7 @@ h6,
         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
+    min-height: 3.5rem; /* Fixed height for small screens */
 }
 
 /* Shimmer/Refraction Effect */
@@ -98,8 +99,10 @@ h6,
     font-weight: 600; /* Sophisticated h2-like thickness */
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 1.75rem; /* Anchor to initial height */
+    transform: translate(-50%, -50%); /* Multi-axis centering */
     margin: 0;
+    z-index: 1050;
 }
 
 .glass-navbar .nav-link {
