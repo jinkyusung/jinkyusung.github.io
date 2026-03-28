@@ -132,4 +132,7 @@ div.lazy {
     height: 74px !important;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid #dee2e6;
+    padding: 2px;
+    background-color: #fff;
 }
