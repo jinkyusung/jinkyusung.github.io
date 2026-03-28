@@ -94,9 +94,12 @@ h6,
 
 .glass-navbar .navbar-brand {
     color: #000000 !important;
-    /* Pure black for maximum contrast */
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-weight: 600; /* Sophisticated h2-like thickness */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 .glass-navbar .nav-link {
