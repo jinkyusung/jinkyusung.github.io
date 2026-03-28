@@ -55,11 +55,12 @@ h6,
 
 /* Glassmorphism Navbar (iOS Liquid Effect) */
 .glass-navbar {
-    background: rgba(255, 255, 255, 0.72) !important; /* Increased opacity for clear readability */
+    background: rgba(255, 255, 255, 0.5) !important;
+    /* Increased opacity for clear readability */
     backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
     -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 
+    box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -82,19 +83,27 @@ h6,
 }
 
 @keyframes liquid-shimmer {
-    0% { transform: translate(-10%, -10%) rotate(0deg); }
-    100% { transform: translate(10%, 10%) rotate(3deg); }
+    0% {
+        transform: translate(-10%, -10%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(10%, 10%) rotate(3deg);
+    }
 }
 
 .glass-navbar .navbar-brand {
-    color: #000000 !important; /* Pure black for maximum contrast */
+    color: #000000 !important;
+    /* Pure black for maximum contrast */
     letter-spacing: -0.02em;
     font-weight: 700;
 }
 
 .glass-navbar .nav-link {
-    color: #1d1d1f !important; /* Dark grey for readability */
-    font-weight: 600; /* Bolder font for readability */
+    color: #1d1d1f !important;
+    /* Dark grey for readability */
+    font-weight: 600;
+    /* Bolder font for readability */
     transition: all 0.3s ease;
     margin: 0 4px;
     padding: 0.5rem 1rem !important;
@@ -102,7 +111,8 @@ h6,
 }
 
 .glass-navbar .nav-link:hover {
-    color: #007bff !important; /* Accent color on hover */
+    color: #007bff !important;
+    /* Accent color on hover */
     background: rgba(0, 0, 0, 0.04);
     transform: translateY(-1px);
 }
@@ -118,7 +128,8 @@ h6,
 
 /* Scrolled state for more depth */
 .glass-navbar.scrolled {
-    background: rgba(255, 255, 255, 0.85) !important; /* Even more solid when scrolled */
+    background: rgba(255, 255, 255, 0.5) !important;
+    /* Even more solid when scrolled */
     backdrop-filter: blur(50px) saturate(210%) !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
