@@ -8,7 +8,7 @@
                             {% if site.data.profile.portrait_url %}
                             <img src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.portrait_caption }}" class="profile-portrait mb-3" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
                             {% endif %}
-                            <div class="h2">
+                            <div class="h2" id="profile-name-container">
                                 {{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small>
                             </div>
                         </div>

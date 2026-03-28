@@ -103,6 +103,14 @@ h6,
     transform: translate(-50%, -50%); /* Multi-axis centering */
     margin: 0;
     z-index: 1050;
+    opacity: 0; /* Hidden by default */
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-navbar .navbar-brand.show-name {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .glass-navbar .nav-link {

@@ -46,5 +46,17 @@ $(function () {
         } else {
             $('.glass-navbar').removeClass('scrolled');
         }
+
+        // Show/hide name in header
+        const profileName = $('#profile-name-container');
+        if (profileName.length) {
+            const bottomOfName = profileName.offset().top + profileName.outerHeight();
+            const topOfScreen = $(window).scrollTop();
+            if (topOfScreen > bottomOfName) {
+                $('.navbar-brand').addClass('show-name');
+            } else {
+                $('.navbar-brand').removeClass('show-name');
+            }
+        }
     });
 })
