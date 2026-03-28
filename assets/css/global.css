@@ -111,8 +111,8 @@ div.lazy {
 /* Organisation logo in Experience / Education cards */
 .org-logo-wrap {
     flex-shrink: 0;
-    width: 70px;
-    height: 70px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,9 +120,9 @@ div.lazy {
 }
 
 .org-logo {
-    width: 70px !important;
-    height: 70px !important;
-    max-width: 70px !important;
-    max-height: 70px !important;
+    width: 52px !important;
+    height: 52px !important;
+    max-width: 52px !important;
+    max-height: 52px !important;
     object-fit: contain;
 }
