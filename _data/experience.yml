@@ -1,14 +1,17 @@
 - name: Seoul National University
+  logo: /assets/images/badges/snu_logo.png
   position: Full-time Research Intern
   dept: Graduate School of Data Science
   date: Jun. 2024 – Feb. 2025
 
 - name: Korea Institute of Science and Technology
+  logo: /assets/images/badges/kist_logo.svg
   position: Full-time Research Intern
   dept: Sensor System Research Center
   date: Dec. 2023 – Feb. 2024
 
 - name: Sogang University
+  logo: /assets/images/badges/sogang_logo.svg
   position: Part-time Research Intern
   dept: Research and Business Development Foundation
   date: May. 2023 – Aug. 2023

@@ -6,11 +6,18 @@
                 <h5 class="mb-3">Education</h5>
                 <ul class="list-unstyled mb-0">
                     {% for item in site.data.profile.education %}
-                    <li class="mb-3">
-                        <div><strong>{{ item.name }}</strong></div>
-                        <div class="pub-meta d-flex text-muted">
-                            <div>{{ item.position }}</div>
-                            <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                    <li class="mb-3 d-flex align-items-center">
+                        {% if item.logo %}
+                        <div class="org-logo-wrap mr-3">
+                            <img src="{{ item.logo }}" alt="{{ item.name }} logo" class="org-logo">
+                        </div>
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <div><strong>{{ item.name }}</strong></div>
+                            <div class="pub-meta d-flex text-muted">
+                                <div>{{ item.position }}</div>
+                                <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                            </div>
                         </div>
                     </li>
                     {% endfor %}
@@ -29,12 +36,19 @@
                 <h5 class="mb-3">Experience</h5>
                 <ul class="list-unstyled mb-0">
                     {% for item in site.data.experience %}
-                    <li class="mb-3">
-                        <div><strong>{{ item.name }}</strong></div>
-                        <div class="pub-meta text-muted">{{ item.dept }}</div>
-                        <div class="pub-meta d-flex text-muted">
-                            <div>{{ item.position }}</div>
-                            <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                    <li class="mb-3 d-flex align-items-center">
+                        {% if item.logo %}
+                        <div class="org-logo-wrap mr-3">
+                            <img src="{{ item.logo }}" alt="{{ item.name }} logo" class="org-logo">
+                        </div>
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <div><strong>{{ item.name }}</strong></div>
+                            <div class="pub-meta text-muted">{{ item.dept }}</div>
+                            <div class="pub-meta d-flex text-muted">
+                                <div>{{ item.position }}</div>
+                                <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                            </div>
                         </div>
                     </li>
                     {% endfor %}

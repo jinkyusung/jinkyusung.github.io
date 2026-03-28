@@ -28,11 +28,13 @@ short_bio: >-
 
 education:
 - name: Seoul National University
+  logo: /assets/images/badges/snu_logo.png
   position: >-
     Graduate School of Data Science <br/>
     Ph.D. Student · Advisor: Prof. Joonseok Lee
   date: Feb. 2025 – present
 - name: Sogang University
+  logo: /assets/images/badges/sogang_logo.svg
   position: >-
     B.S.E. in Computer Science <br/>
     B.S. in Mathematics
