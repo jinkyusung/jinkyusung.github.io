@@ -117,11 +117,11 @@
                     {% for item in site.data.research_grants %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
+                        <div class="pub-meta text-muted">{{ item.role }}</div>
                         <div class="pub-meta d-flex align-items-end text-muted">
-                            <div>{{ item.role }}</div>
+                            <div>{{ item.amount }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                         </div>
-                        <div class="pub-meta text-muted">{{ item.amount }}</div>
                     </li>
                     {% endfor %}
                 </ul>
