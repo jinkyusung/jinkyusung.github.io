@@ -197,13 +197,7 @@ h6,
     transform: scaleX(0.85);
 }
 
-/* Scrolled state for more depth */
-.glass-navbar.scrolled {
-    background: rgba(255, 255, 255, 0.5) !important;
-    /* Even more solid when scrolled */
-    backdrop-filter: blur(50px) saturate(210%) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
+
 
 .inline-badge {
     height: 16px;

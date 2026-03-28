@@ -42,11 +42,6 @@ $(function () {
     // Glass navbar scroll effect
     const updateNavbar = function() {
         const topOfScreen = $(window).scrollTop();
-        if (topOfScreen > 10) {
-            $('.glass-navbar').addClass('scrolled');
-        } else {
-            $('.glass-navbar').removeClass('scrolled');
-        }
 
         // Show/hide name in header
         const profileName = $('#profile-name-container');
