@@ -2,9 +2,9 @@ primary_name: "Jinkyu Sung"
 navbar_name: "Jinkyu Sung"
 
 email: "jinkyusung@snu.ac.kr"
-github: jinkyusung
 linkedin: jinkyusung
 gscholar: -JwproEAAAAJ&hl
+# github: jinkyusung
 # cv_link: link-to-your-cv-file
 
 short_bio_text_justify: false
@@ -26,7 +26,7 @@ education:
   position: >-
     Ph.D. Student in Data Science<br/>
     Advisor: Prof. Joonseok Lee
-  date: Feb. 2025 – present
+  date: Feb. 2025 – Present
 - name: Sogang University
   logo: /assets/images/badges/sogang_logo.svg
   position: >-
