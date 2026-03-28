@@ -14,7 +14,7 @@
                         {% endif %}
                         <div class="flex-grow-1">
                             <div><strong>{{ item.name }}</strong></div>
-                            <div class="pub-meta d-flex text-muted">
+                            <div class="pub-meta d-flex align-items-end text-muted">
                                 <div>{{ item.position }}</div>
                                 <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="flex-grow-1">
                             <div><strong>{{ item.name }}</strong></div>
                             <div class="pub-meta text-muted">{{ item.dept }}</div>
-                            <div class="pub-meta d-flex text-muted">
+                            <div class="pub-meta d-flex align-items-end text-muted">
                                 <div>{{ item.position }}</div>
                                 <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                             </div>
@@ -68,7 +68,7 @@
                 <ul class="list-unstyled mb-0">
                     {% for item in site.data.awards %}
                     <li class="mb-3">
-                        <div class="d-flex">
+                        <div class="d-flex align-items-end">
                             <div>
                                 <strong>{{ item.name }}</strong>
                                 {% if item.detail %}<div class="pub-meta text-muted">{{ item.detail }}</div>{% endif %}
@@ -94,7 +94,7 @@
                 <div class="mb-2"><strong>Program Committee Member</strong></div>
                 <ul class="list-unstyled mb-0">
                     {% for item in site.data.academic_service.program_committee %}
-                    <li class="pub-meta d-flex mb-2 text-muted">
+                    <li class="pub-meta d-flex align-items-end mb-2 text-muted">
                         <div>{{ item.ordinal }} {{ item.venue }}</div>
                         <div class="ml-auto no-break"><em>{{ item.year }}</em></div>
                     </li>
@@ -117,7 +117,7 @@
                     {% for item in site.data.research_grants %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
-                        <div class="pub-meta d-flex text-muted">
+                        <div class="pub-meta d-flex align-items-end text-muted">
                             <div>{{ item.role }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                         </div>
