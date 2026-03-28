@@ -55,13 +55,13 @@ h6,
 
 /* Glassmorphism Navbar (iOS Liquid Effect) */
 .glass-navbar {
-    background: rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(25px) saturate(210%) brightness(108%) contrast(100%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(210%) brightness(108%) contrast(100%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.72) !important; /* Increased opacity for clear readability */
+    backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
     box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.03),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+        0 4px 20px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
 }
@@ -74,55 +74,50 @@ h6,
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
-    opacity: 0.5;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+    opacity: 0.3;
     pointer-events: none;
     z-index: -1;
-    animation: liquid-shimmer 15s infinite alternate ease-in-out;
+    animation: liquid-shimmer 20s infinite alternate ease-in-out;
 }
 
 @keyframes liquid-shimmer {
     0% { transform: translate(-10%, -10%) rotate(0deg); }
-    100% { transform: translate(10%, 10%) rotate(5deg); }
+    100% { transform: translate(10%, 10%) rotate(3deg); }
 }
 
 .glass-navbar .navbar-brand {
-    color: #1d1d1f !important;
+    color: #000000 !important; /* Pure black for maximum contrast */
     letter-spacing: -0.02em;
     font-weight: 700;
 }
 
 .glass-navbar .nav-link {
-    color: #3a3a3c !important;
-    font-weight: 500;
+    color: #1d1d1f !important; /* Dark grey for readability */
+    font-weight: 600; /* Bolder font for readability */
     transition: all 0.3s ease;
     margin: 0 4px;
     padding: 0.5rem 1rem !important;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .glass-navbar .nav-link:hover {
-    color: #1d1d1f !important;
-    background: rgba(0, 0, 0, 0.03);
+    color: #007bff !important; /* Accent color on hover */
+    background: rgba(0, 0, 0, 0.04);
     transform: translateY(-1px);
 }
 
 .glass-navbar .navbar-toggler {
     border: none;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.04);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Scrolled state for more depth */
 .glass-navbar.scrolled {
-    background: rgba(255, 255, 255, 0.65) !important;
-    backdrop-filter: blur(30px) saturate(220%) brightness(110%) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.85) !important; /* Even more solid when scrolled */
+    backdrop-filter: blur(50px) saturate(210%) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .inline-badge {
