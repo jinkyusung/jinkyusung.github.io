@@ -117,13 +117,31 @@ h6,
     transform: translateY(-1px);
 }
 
+.two-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.two-bars span {
+    display: block;
+    width: 22px;
+    height: 1.8px;
+    background-color: #1d1d1f;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
 .glass-navbar .navbar-toggler {
     border: none !important;
     background: transparent !important;
-    padding: 0.5rem 0 !important;
-    color: #1d1d1f !important;
-    font-weight: 600;
+    padding: 0.5rem 0.5rem !important;
     box-shadow: none !important;
+    outline: none !important;
+}
+
+.glass-navbar .navbar-toggler:active .two-bars span {
+    transform: scaleX(0.85);
 }
 
 /* Scrolled state for more depth */
