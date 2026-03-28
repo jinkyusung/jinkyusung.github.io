@@ -96,16 +96,13 @@ h6,
 .glass-navbar .navbar-brand {
     color: #000000 !important;
     letter-spacing: -0.01em;
-    font-weight: 600; /* Sophisticated h2-like thickness */
-    position: absolute;
-    left: 50%;
-    top: 1.75rem; /* Anchor to initial height */
-    transform: translate(-50%, -50%); /* Multi-axis centering */
-    margin: 0;
+    font-weight: 600;
+    margin: 0 !important;
     z-index: 1050;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Remove absolute positioning here to allow natural vertical centering from the flex parent */
 }
 
 .glass-navbar .navbar-brand.show-name {
@@ -152,6 +149,10 @@ h6,
     padding: 0.5rem 0.5rem !important;
     box-shadow: none !important;
     outline: none !important;
+    position: absolute;
+    right: 1rem;
+    top: 1.75rem;
+    transform: translateY(-50%);
 }
 
 .glass-navbar .navbar-toggler:active .two-bars span {
