@@ -3,7 +3,7 @@
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    padding-top: 5.0rem;
+    padding-top: 4.3rem;
 }
 
 h1,
@@ -65,7 +65,7 @@ h6,
         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
-    min-height: 3.5rem; /* Fixed height for small screens */
+    min-height: 2.8rem; /* Reduced height (3.5rem * 0.8) */
 }
 
 /* Shimmer/Refraction Effect */
@@ -110,6 +110,16 @@ h6,
     pointer-events: auto;
 }
 
+@media (max-width: 576px) {
+    .glass-navbar .navbar-brand {
+        max-width: 70%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
 .glass-navbar .nav-link {
     color: #1d1d1f !important;
     /* Dark grey for readability */
@@ -150,9 +160,11 @@ h6,
     box-shadow: none !important;
     outline: none !important;
     position: absolute;
-    right: 1rem;
-    top: 1.75rem;
+    right: 1rem !important;
+    left: auto !important;
+    top: 50%;
     transform: translateY(-50%);
+    z-index: 1100;
 }
 
 .glass-navbar .navbar-toggler:active .two-bars span {
