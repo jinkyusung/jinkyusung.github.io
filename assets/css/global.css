@@ -53,8 +53,76 @@ h6,
     font-weight: 400;
 }
 
-.navbar {
-    opacity: 0.95;
+/* Glassmorphism Navbar (iOS Liquid Effect) */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(25px) saturate(210%) brightness(108%) contrast(100%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(210%) brightness(108%) contrast(100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.03),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Shimmer/Refraction Effect */
+.glass-navbar::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+    animation: liquid-shimmer 15s infinite alternate ease-in-out;
+}
+
+@keyframes liquid-shimmer {
+    0% { transform: translate(-10%, -10%) rotate(0deg); }
+    100% { transform: translate(10%, 10%) rotate(5deg); }
+}
+
+.glass-navbar .navbar-brand {
+    color: #1d1d1f !important;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.glass-navbar .nav-link {
+    color: #3a3a3c !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+}
+
+.glass-navbar .nav-link:hover {
+    color: #1d1d1f !important;
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
+}
+
+.glass-navbar .navbar-toggler {
+    border: none;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scrolled state for more depth */
+.glass-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: blur(30px) saturate(220%) brightness(110%) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
 .inline-badge {

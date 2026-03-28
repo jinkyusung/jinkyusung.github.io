@@ -39,4 +39,12 @@ $(function () {
     $(".lazy").on("load", function () {
         $grid.masonry('layout');
     });
+    // Glass navbar scroll effect
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 10) {
+            $('.glass-navbar').addClass('scrolled');
+        } else {
+            $('.glass-navbar').removeClass('scrolled');
+        }
+    });
 })
