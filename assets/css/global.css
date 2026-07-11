@@ -6,6 +6,13 @@ body {
     padding-top: 4.3rem;
 }
 
+@media (min-width: 1200px) {
+    .container,
+    .container-lg {
+        max-width: 960px;
+    }
+}
+
 h1,
 h2,
 h3,
