@@ -221,6 +221,15 @@ h6,
     min-height: 100px;
 }
 
+.abstract-text {
+    text-align: justify;
+    text-justify: inter-word;
+    word-break: normal;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
 img.lazy {
     background-image: url('images/loading.gif');
     background-repeat: no-repeat;
