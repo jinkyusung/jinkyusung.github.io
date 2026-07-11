@@ -7,7 +7,7 @@ gscholar: -JwproEAAAAJ&hl
 # github: jinkyusung
 # cv_link: link-to-your-cv-file
 
-short_bio_text_justify: false
+short_bio_text_justify: true
 short_bio: >-
   <p>
     I am a Ph.D. student in Data Science at <a href="https://gsds.snu.ac.kr/" target="_blank">Seoul National University</a>,

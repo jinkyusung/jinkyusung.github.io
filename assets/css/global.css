@@ -221,7 +221,7 @@ h6,
     min-height: 100px;
 }
 
-.abstract-text {
+.text-justify-hyphenate {
     text-align: justify;
     text-justify: inter-word;
     word-break: normal;
