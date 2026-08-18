@@ -4,7 +4,7 @@ date:           2027-01-21 00:01:00 +0900
 selected:       true
 pub:            "Submitted to International Conference on Learning Representations (ICLR)"
 pub_date:       "2027"
-type:           "Conference"
+type:           "Preprint"
 abstract: >-
     TBD
 authors:
