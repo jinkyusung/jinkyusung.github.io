@@ -12,6 +12,6 @@ authors:
   - Myunggeum Jee
   - Joonseok Lee
 links:
-  Paper: https://openreview.net/pdf?id=U7tR3lCRr5
+  Paper: https://proceedings.iclr.cc/paper_files/paper/2026/hash/f6712d5191d2501dfc7024389f7bfcdd-Abstract-Conference.html
   GitHub: https://github.com/jinkyusung/CopulaLSP
 ---
