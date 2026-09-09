@@ -1,0 +1,14 @@
+title: "Jinkyu Sung"
+baseurl: ""
+
+markdown: kramdown
+
+exclude:
+  - .bundle
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+collections:
+  publications:
+    output: false

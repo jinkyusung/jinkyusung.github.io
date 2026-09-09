@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-light site-navbar fixed-top mb-5">
+    <div class="container-lg position-relative d-flex align-items-center justify-content-end flex-wrap">
+        <span class="navbar-brand">{{ site.data.profile.navbar_name }}</span>
+        <div class="theme-toggle-item">
+            <div class="theme-switch" role="group" aria-label="Color theme">
+                <button class="theme-option" type="button" data-theme-value="light" aria-label="Light mode" title="Light mode" aria-pressed="false">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="theme-option" type="button" data-theme-value="dark" aria-label="Dark mode" title="Dark mode" aria-pressed="false">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="two-bars">
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                {% for item in site.data.navigation.pages %}
+                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                    <a class="nav-link" href="{{ item.url | relative_url }}"{% if item.name == page.navbar_title %} aria-current="page"{% endif %}>{{ item.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

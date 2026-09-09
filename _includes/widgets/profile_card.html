@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body profile-card-body pt-4 pb-4">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="d-flex flex-column align-items-center">
+                            {% if site.data.profile.portrait_url %}
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.portrait_caption }}" class="profile-portrait mb-3" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
+                            {% endif %}
+                            <div class="h2" id="profile-name-container">
+                                {{ site.data.profile.primary_name }}
+                            </div>
+                        </div>
+                        <div class="text-profile-bio mt-3 {% if site.data.profile.short_bio_text_justify %}text-justify-hyphenate{% else %}text-left{% endif %}" lang="en">
+                            {{ site.data.profile.short_bio }}
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col text-left">
+                        <a class="d-flex align-items-center mb-1" href="mailto:{{ site.data.profile.email }}">
+                            <i class="fas fa-paper-plane fa-fw mr-2"></i><span>{{ site.data.profile.email }}</span>
+                        </a>
+
+                        {% if site.data.profile.gscholar %}
+                        {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+                        {%- assign gscholar_url = site.data.profile.gscholar -%}
+                        {%- else -%}
+                        {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                        {%- endif -%}
+                        <a class="d-flex align-items-center mb-1 no-break" target="_blank" href="{{ gscholar_url }}">
+                            <i class="fab fa-google-scholar fa-fw mr-2"></i><span>Google Scholar</span>
+                        </a>
+                        {% endif %}
+                        
+                        {% if site.data.profile.linkedin %}
+                        <a class="d-flex align-items-center mb-1 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+                            <i class="fab fa-linkedin fa-fw mr-2"></i><span>LinkedIn</span>
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.github %}
+                        <a class="d-flex align-items-center mb-1 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+                            <i class="fab fa-github fa-fw mr-2"></i><span>GitHub</span>
+                        </a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

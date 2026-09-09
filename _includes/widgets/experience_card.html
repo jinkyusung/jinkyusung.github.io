@@ -1,0 +1,132 @@
+{% if site.data.profile.education %}
+<div class="row home-card-row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body section-card-body pt-4">
+                <h5 class="mb-3">Education</h5>
+                <ul class="list-unstyled mb-0">
+                    {% for item in site.data.profile.education %}
+                    <li class="mb-3 d-flex align-items-center">
+                        {% if item.logo %}
+                        <div class="org-logo-wrap mr-3">
+                            <img src="{{ item.logo }}" alt="{{ item.name }} logo" class="org-logo">
+                        </div>
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <div class="org-name"><strong>{{ item.name }}</strong></div>
+                            <div class="pub-meta d-flex align-items-end text-muted">
+                                <div>{{ item.position }}</div>
+                                <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if site.data.experience %}
+<div class="row home-card-row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body section-card-body pt-4">
+                <h5 class="mb-3">Experience</h5>
+                <ul class="list-unstyled mb-0">
+                    {% for item in site.data.experience %}
+                    <li class="mb-3 d-flex align-items-center">
+                        {% if item.logo %}
+                        <div class="org-logo-wrap mr-3">
+                            <img src="{{ item.logo }}" alt="{{ item.name }} logo" class="org-logo">
+                        </div>
+                        {% endif %}
+                        <div class="flex-grow-1">
+                            <div class="org-name"><strong>{{ item.name }}</strong></div>
+                            <div class="pub-meta text-muted">{{ item.dept }}</div>
+                            <div class="pub-meta d-flex align-items-end text-muted">
+                                <div>{{ item.position }}</div>
+                                <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if site.data.awards %}
+<div class="row home-card-row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body section-card-body pt-4">
+                <h5 class="mb-3">Honors &amp; Awards</h5>
+                <ul class="list-unstyled mb-0">
+                    {% for item in site.data.awards %}
+                    <li class="mb-3">
+                        <div class="d-flex align-items-end">
+                            <div>
+                                <strong>{{ item.name }}</strong>
+                                {% if item.detail %}<div class="pub-meta text-muted">{{ item.detail }}</div>{% endif %}
+                            </div>
+                            <div class="pub-meta ml-auto no-break text-muted"><em>{{ item.date }}</em></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if site.data.academic_service %}
+<div class="row home-card-row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body section-card-body pt-4">
+                <h5 class="mb-3">Academic Service</h5>
+                {% if site.data.academic_service.program_committee %}
+                <div><strong>Program Committee Member</strong></div>
+                <ul class="list-unstyled mb-3">
+                    {% for item in site.data.academic_service.program_committee %}
+                    <li class="pub-meta d-flex align-items-end mb-0 text-muted">
+                        <div>{{ item.ordinal }} {{ item.venue }}</div>
+                        <div class="ml-auto no-break"><em>{{ item.year }}</em></div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if site.data.research_grants %}
+<div class="row home-card-row">
+    <div class="col">
+        <div class="card home-card bg-white">
+            <div class="card-body section-card-body pt-4">
+                <h5 class="mb-3">Research Grant</h5>
+                <ul class="list-unstyled mb-0">
+                    {% for item in site.data.research_grants %}
+                    <li class="mb-3">
+                        <div><strong>{{ item.name }}</strong></div>
+                        <div class="pub-meta text-muted">{{ item.role }}</div>
+                        <div class="pub-meta d-flex align-items-end text-muted">
+                            <div>{{ item.amount }}</div>
+                            <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,39 @@
+primary_name: "Jinkyu Sung"
+navbar_name: "Jinkyu Sung"
+
+email: "jinkyusung@snu.ac.kr"
+linkedin: jinkyusung
+gscholar: -JwproEAAAAJ&hl
+github: jinkyusung
+
+short_bio_text_justify: true
+short_bio: >-
+  <p>
+    I am a Ph.D. student in Artificial Intelligence at <strong><a href="https://snuai.snu.ac.kr/" target="_blank">Seoul National University</a></strong>,
+    advised by <a href="https://joonseok.net/" target="_blank">Prof. Joonseok Lee</a> at the
+    <strong><a href="https://vip.snu.ac.kr/" target="_blank">Visual Information Processing Lab (VIPLab)</a></strong>.
+  </p>
+  <p class="mb-1">My research interests include:</p>
+  <ul class="mb-0">
+    <li><strong>Recommendation Systems</strong></li>
+    <li><strong>Continuous-Time Models</strong></li>
+    <li><strong>Graph Representation Learning</strong></li>
+    <li><strong>Mathematics for Machine Learning</strong></li>
+  </ul>
+
+portrait_url: /assets/images/photos/selfie.jpeg
+portrait_caption: Jinkyu Sung
+
+education:
+- name: Seoul National University
+  logo: /assets/images/badges/snu_logo.png
+  position: >-
+    Ph.D. Student in Artificial Intelligence<br/>
+    Advised by Prof. Joonseok Lee
+  date: Feb. 2025 – Present
+- name: Sogang University
+  logo: /assets/images/badges/sogang_logo.svg
+  position: >-
+    B.S.E. in Computer Science<br/>
+    B.S. in Mathematics
+  date: Feb. 2019 – Feb. 2025

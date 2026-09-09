@@ -1,0 +1,17 @@
+---
+layout: default
+title : Publications
+navbar_title: Publications
+---
+
+{% assign sorted_pubs = site.publications | sort: "date" | reverse %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="publication-list">
+            {% for item in sorted_pubs %}
+                {% include widgets/publication_item.html item=item %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

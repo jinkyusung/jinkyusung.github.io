@@ -1,0 +1,45 @@
+{% assign item = include.item %}
+{% assign venue_alias = "" %}
+{% if item.type == "Conference" and item.pub contains "(" %}
+{% assign venue_alias = item.pub | split: "(" | last | replace: ")", "" %}
+{% endif %}
+{% assign has_links = false %}
+{% for link in item.links %}
+{% assign link_url = link[1].url | default: link[1] %}
+{% if link_url and link_url != "" %}
+{% assign has_links = true %}
+{% endif %}
+{% endfor %}
+<article class="publication-item publication-card">
+    <div class="publication-card-header">
+        <div class="publication-tags">
+            <span class="publication-type publication-type-{{ item.type | slugify }}">{{ item.type }}</span>
+            {% if venue_alias != "" %}<span class="publication-venue-tag">{{ venue_alias }} {{ item.pub_date }}</span>{% endif %}
+            {% if item.track %}<span class="publication-track-tag">{{ item.track }}</span>{% endif %}
+        </div>
+        {% if has_links %}
+        <div class="publication-header-meta">
+            <div class="publication-actions" aria-label="Publication links">
+                {% for link in item.links %}
+                {% assign link_label = link[0] | downcase %}
+                {% assign link_url = link[1].url | default: link[1] %}
+                {% if link_url and link_url != "" %}
+                <a class="publication-link" target="_blank" href="{{ link_url }}" aria-label="{{ link[0] }}" title="{{ link[0] }}">
+                    {% if link_label == "github" %}
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    {% elsif link_label == "paper" %}
+                    <i class="fas fa-file-lines" aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fas fa-link" aria-hidden="true"></i>
+                    {% endif %}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <h6 class="publication-title">{{ item.title }}</h6>
+    <p class="publication-authors pub-meta text-muted">{% include widgets/author_list.html authors=item.authors %}</p>
+    <p class="publication-venue pub-meta text-muted">{{ item.pub }}</p>
+</article>

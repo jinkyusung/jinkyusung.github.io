@@ -1,0 +1,7 @@
+program_committee:
+  - venue: "International Conference on Machine Learning (ICML)"
+    year: 2026
+    ordinal: "43rd"
+  - venue: "ACM International Conference on Information and Knowledge Management (CIKM)"
+    year: 2025
+    ordinal: "35th"
