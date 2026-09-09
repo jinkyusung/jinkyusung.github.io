@@ -2,20 +2,20 @@
 
 :root {
     --font-sans: "Open Sans", sans-serif;
-    --page-bg: #f2f2f7;
-    --surface: #ffffff;
-    --surface-hover: #f2f2f7;
-    --surface-active: #e5e5ea;
-    --border: rgba(60, 60, 67, 0.18);
+    --page-bg: #ffffff;
+    --surface: #f7f7f7;
+    --surface-hover: #f2f2f2;
+    --surface-active: #ebebeb;
+    --border: #ebebeb;
     --border-strong: #d1d1d6;
-    --text: #000000;
-    --text-secondary: rgba(60, 60, 67, 0.6);
-    --text-muted: rgba(60, 60, 67, 0.3);
-    --text-faint: rgba(60, 60, 67, 0.18);
+    --text: #262626;
+    --text-secondary: #7c7c7c;
+    --text-muted: #8e8e93;
+    --text-faint: #aeaeb2;
     --link: #007aff;
     --link-hover-bg: rgba(0, 122, 255, 0.08);
     --link-hover-border: rgba(0, 122, 255, 0.35);
-    --theme-switch-bg: #e5e5ea;
+    --theme-switch-bg: #ebebeb;
     --theme-option-bg: #ffffff;
     --theme-option-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
     --portrait-border: #d1d1d6;
@@ -43,12 +43,12 @@ html[data-theme="dark"] {
     --surface: #232426;
     --surface-hover: #2c2d2f;
     --surface-active: #3a3b3d;
-    --border: rgba(84, 84, 88, 0.65);
+    --border: #2C2E30;
     --border-strong: #48484a;
-    --text: #ffffff;
-    --text-secondary: rgba(235, 235, 245, 0.6);
-    --text-muted: rgba(235, 235, 245, 0.3);
-    --text-faint: rgba(235, 235, 245, 0.18);
+    --text: #DDDEDE;
+    --text-secondary: #9C9C9D;
+    --text-muted: #9C9C9D;
+    --text-faint: #8E8E94;
     --link: #0a84ff;
     --link-hover-bg: rgba(10, 132, 255, 0.14);
     --link-hover-border: rgba(10, 132, 255, 0.45);
@@ -142,7 +142,7 @@ strong {
 }
 
 .home-card {
-    border: 1px solid var(--border) !important;
+    border: 0 !important;
 }
 
 .home-page {
@@ -201,8 +201,8 @@ a:hover {
 }
 
 .site-navbar {
-    background: var(--surface) !important;
-    border-bottom: 1px solid var(--border) !important;
+    background: var(--page-bg) !important;
+    border-bottom: 0 !important;
     box-shadow: none !important;
     min-height: 2.8rem;
     padding-left: 0;
@@ -523,7 +523,7 @@ html[data-theme="dark"] .theme-switch::before {
 
 .publication-card {
     background: var(--surface);
-    border: 1px solid var(--border);
+    border: 0;
     border-radius: 0.8rem;
     padding: 1.1rem 1.1rem 0.95rem;
 }
@@ -543,12 +543,19 @@ html[data-theme="dark"] .theme-switch::before {
     min-width: 0;
 }
 
-.publication-type {
+.publication-type,
+.publication-venue-tag,
+.publication-track-tag {
+    align-items: center;
+    border: 1px solid var(--border-strong);
     border-radius: 999px;
+    box-sizing: border-box;
+    display: inline-flex;
     font-size: 0.75rem;
     font-weight: 700;
-    line-height: 18px;
-    padding: 0.125rem 0.55rem;
+    height: var(--publication-tag-height);
+    line-height: 1;
+    padding: 0 0.55rem;
     white-space: nowrap;
 }
 
@@ -564,24 +571,12 @@ html[data-theme="dark"] .theme-switch::before {
 
 .publication-venue-tag {
     background: var(--tag-venue-bg);
-    border-radius: 999px;
     color: var(--tag-venue-text);
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 18px;
-    padding: 0.125rem 0.55rem;
-    white-space: nowrap;
 }
 
 .publication-track-tag {
     background: var(--tag-track-bg);
-    border-radius: 999px;
     color: var(--tag-track-text);
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 18px;
-    padding: 0.125rem 0.55rem;
-    white-space: nowrap;
 }
 
 .publication-header-meta {
