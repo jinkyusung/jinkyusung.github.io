@@ -40,6 +40,7 @@
     const siteNavigation = document.querySelector('.site-navigation');
     const pageLinks = siteNavigation.querySelectorAll('.nav-link');
     const pageCache = new Map();
+    let navbarFontReady = !document.fonts;
 
     function normalizedPath(url) {
         return new URL(url, window.location.href).pathname.replace(/\/$/, '') || '/';
@@ -144,8 +145,17 @@
 
         navbarBrand.classList.toggle(
             'show-name',
-            (!profileName || profileName.getBoundingClientRect().bottom < 0) && hasRoomForName
+            navbarFontReady &&
+            (!profileName || profileName.getBoundingClientRect().bottom < 0) &&
+            hasRoomForName
         );
+    }
+
+    if (document.fonts) {
+        document.fonts.ready.then(function () {
+            navbarFontReady = true;
+            updateNavbarBrand();
+        });
     }
 
     updateNavbarBrand();
