@@ -46,7 +46,6 @@
 
     function setNavigationState(url) {
         const activePath = normalizedPath(url);
-        siteNavigation.classList.toggle('is-publication-active', activePath.endsWith('/publications'));
 
         pageLinks.forEach(function (link) {
             const isCurrent = normalizedPath(link.href) === activePath;

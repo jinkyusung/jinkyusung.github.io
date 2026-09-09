@@ -18,9 +18,6 @@
     --theme-switch-bg: #ebebeb;
     --theme-option-bg: #ffffff;
     --theme-option-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
-    --navbar-glass-strong: rgba(255, 255, 255, 0.72);
-    --navbar-glass-medium: rgba(255, 255, 255, 0.34);
-    --navbar-glass-soft: rgba(255, 255, 255, 0.06);
     --portrait-border: #d1d1d6;
     --tag-conference-bg: #eaf2fb;
     --tag-conference-text: #376f9f;
@@ -33,10 +30,7 @@
     --nav-control-height: 34.8px;
     --nav-control-inset: 3px;
     --nav-option-size: 28.8px;
-    --page-nav-option-height: 36px;
-    --page-nav-home-width: 60px;
-    --page-nav-publications-width: 90px;
-    --page-nav-option-gap: -6px;
+    --page-nav-gap: 1.4rem;
     --theme-option-gap: 0px;
     --publication-tag-height: 22px;
 }
@@ -58,9 +52,6 @@ html[data-theme="dark"] {
     --theme-switch-bg: #2c2c2e;
     --theme-option-bg: #48484a;
     --theme-option-shadow: 0 1px 4px rgba(0, 0, 0, 0.34);
-    --navbar-glass-strong: rgba(28, 29, 31, 0.76);
-    --navbar-glass-medium: rgba(28, 29, 31, 0.38);
-    --navbar-glass-soft: rgba(28, 29, 31, 0.08);
     --portrait-border: #48484a;
     --tag-conference-bg: #1e3448;
     --tag-conference-text: #8ec4ee;
@@ -119,9 +110,12 @@ strong {
     font-weight: 400;
 }
 
-#profile-name-container,
-.card > .card-body > h5 {
+#profile-name-container {
     font-weight: 700;
+}
+
+.card > .card-body > h5 {
+    font-weight: 600;
 }
 
 #profile-name-container,
@@ -179,6 +173,11 @@ strong {
     color: var(--text);
 }
 
+.text-profile-bio strong,
+.section-card-body strong {
+    font-weight: 600;
+}
+
 .card .text-muted {
     color: var(--text-muted) !important;
 }
@@ -206,61 +205,13 @@ a:hover {
 }
 
 .site-navbar {
-    background: transparent !important;
+    background: var(--page-bg) !important;
     border-bottom: 0 !important;
     box-shadow: none !important;
-    isolation: isolate;
     min-height: 2.8rem;
-    overflow: hidden;
     padding-left: 0;
     padding-right: 0;
-}
-
-.site-navbar::before {
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
-    background: linear-gradient(
-        to bottom,
-        var(--navbar-glass-strong) 0%,
-        var(--navbar-glass-medium) 46%,
-        var(--navbar-glass-soft) 80%,
-        transparent 100%
-    );
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-}
-
-.site-navbar::after {
-    -webkit-backdrop-filter: blur(100px);
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        rgba(0, 0, 0, 0.96) 16%,
-        rgba(0, 0, 0, 0.82) 34%,
-        rgba(0, 0, 0, 0.58) 52%,
-        rgba(0, 0, 0, 0.32) 68%,
-        rgba(0, 0, 0, 0.12) 84%,
-        transparent 100%
-    );
-    backdrop-filter: blur(100px);
-    content: "";
-    inset: 0;
-    mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        rgba(0, 0, 0, 0.96) 16%,
-        rgba(0, 0, 0, 0.82) 34%,
-        rgba(0, 0, 0, 0.58) 52%,
-        rgba(0, 0, 0, 0.32) 68%,
-        rgba(0, 0, 0, 0.12) 84%,
-        transparent 100%
-    );
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
+    transition: background-color 0.2s ease;
 }
 
 .site-navbar > .container-lg {
@@ -269,31 +220,11 @@ a:hover {
 
 .site-navbar .navbar-nav {
     align-items: center;
-    background: var(--theme-switch-bg);
-    border-radius: 999px;
+    background: transparent;
     flex-direction: row;
-    gap: 0;
-    padding: var(--nav-control-inset);
+    gap: var(--page-nav-gap);
+    padding: 0;
     position: relative;
-}
-
-.page-nav-indicator {
-    background: var(--theme-option-bg);
-    border-radius: 999px;
-    box-shadow: var(--theme-option-shadow);
-    height: var(--page-nav-option-height);
-    left: var(--nav-control-inset);
-    position: absolute;
-    top: var(--nav-control-inset);
-    transform: translateX(0);
-    transition: transform 0.2s ease, width 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-    width: var(--page-nav-home-width);
-    z-index: 1;
-}
-
-.site-navigation.is-publication-active .page-nav-indicator {
-    transform: translateX(calc(var(--page-nav-home-width) + var(--page-nav-option-gap)));
-    width: var(--page-nav-publications-width);
 }
 
 .site-navigation {
@@ -303,31 +234,17 @@ a:hover {
 
 .site-navbar .nav-link {
     align-items: center;
-    border-radius: 999px;
     color: var(--text-secondary) !important;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-weight: 400;
-    gap: 1px;
-    height: var(--page-nav-option-height);
+    gap: 0.35rem;
+    height: 2.8rem;
     justify-content: center;
     margin: 0;
-    padding: 0 0.65rem !important;
+    padding: 0 !important;
     position: relative;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-    z-index: 2;
-}
-
-.site-navbar .nav-item:first-child .nav-link {
-    width: var(--page-nav-home-width);
-}
-
-.site-navbar .nav-item:last-child .nav-link {
-    width: var(--page-nav-publications-width);
-}
-
-.site-navbar .nav-item:last-child {
-    margin-left: var(--page-nav-option-gap);
+    transition: color 0.2s ease;
 }
 
 .site-navbar .nav-icon {
@@ -343,17 +260,14 @@ a:hover {
 }
 
 .site-navbar .nav-label {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 13px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
 }
 
 .site-navbar .nav-link:hover {
+    color: var(--text) !important;
     text-decoration: none;
-}
-
-.site-navbar .nav-link:hover .nav-icon {
-    color: var(--text);
 }
 
 .site-navbar .nav-link:focus {
@@ -361,12 +275,12 @@ a:hover {
 }
 
 .site-navbar .nav-link:focus-visible {
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35);
+    border-radius: 0.25rem;
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
 }
 
 .site-navbar .nav-item.active .nav-link {
-    background: transparent;
-    box-shadow: none;
     color: var(--text) !important;
 }
 
@@ -614,7 +528,7 @@ html[data-theme="dark"] .theme-switch::before {
 .publication-title {
     color: var(--text);
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 22px;
     margin: 8px 0 0;
 }
@@ -675,7 +589,6 @@ html[data-theme="dark"] .theme-switch::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .page-nav-indicator,
     .theme-switch,
     .theme-option,
     .theme-switch::before {
