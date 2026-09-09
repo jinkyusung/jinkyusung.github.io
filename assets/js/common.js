@@ -2,16 +2,9 @@
     const root = document.documentElement;
     const themeOptions = document.querySelectorAll('.theme-option');
     const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    let followsSystemTheme = true;
 
-    function savedTheme() {
-        try {
-            return localStorage.getItem('site-theme');
-        } catch (error) {
-            return null;
-        }
-    }
-
-    function applyTheme(theme, remember) {
+    function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
         root.style.colorScheme = theme;
         themeOptions.forEach(function (option) {
@@ -20,27 +13,20 @@
                 String(option.dataset.themeValue === theme)
             );
         });
-
-        if (remember) {
-            try {
-                localStorage.setItem('site-theme', theme);
-            } catch (error) {
-                return;
-            }
-        }
     }
 
-    applyTheme(root.getAttribute('data-theme'), false);
+    applyTheme(root.getAttribute('data-theme'));
 
     themeOptions.forEach(function (option) {
         option.addEventListener('click', function () {
-            applyTheme(option.dataset.themeValue, true);
+            followsSystemTheme = false;
+            applyTheme(option.dataset.themeValue);
         });
     });
 
     function followSystemTheme(event) {
-        if (!savedTheme()) {
-            applyTheme(event.matches ? 'dark' : 'light', false);
+        if (followsSystemTheme) {
+            applyTheme(event.matches ? 'dark' : 'light');
         }
     }
 

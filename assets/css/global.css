@@ -2,23 +2,23 @@
 
 :root {
     --font-sans: "Open Sans", sans-serif;
-    --page-bg: #f8f9fa;
+    --page-bg: #f2f2f7;
     --surface: #ffffff;
-    --surface-hover: #f4f4f5;
-    --surface-active: #ececef;
-    --border: #ececf0;
-    --border-strong: #e5e5e7;
-    --text: #1d1d1f;
-    --text-secondary: #606066;
-    --text-muted: #98989c;
-    --text-faint: #b0b0b5;
-    --link: #007bff;
-    --link-hover-bg: #f1f6ff;
-    --link-hover-border: #9fc4ff;
-    --theme-switch-bg: #ececef;
+    --surface-hover: #f2f2f7;
+    --surface-active: #e5e5ea;
+    --border: rgba(60, 60, 67, 0.18);
+    --border-strong: #d1d1d6;
+    --text: #000000;
+    --text-secondary: rgba(60, 60, 67, 0.6);
+    --text-muted: rgba(60, 60, 67, 0.3);
+    --text-faint: rgba(60, 60, 67, 0.18);
+    --link: #007aff;
+    --link-hover-bg: rgba(0, 122, 255, 0.08);
+    --link-hover-border: rgba(0, 122, 255, 0.35);
+    --theme-switch-bg: #e5e5ea;
     --theme-option-bg: #ffffff;
-    --theme-option-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
-    --portrait-border: #dee2e6;
+    --theme-option-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    --portrait-border: #d1d1d6;
     --tag-conference-bg: #eaf2fb;
     --tag-conference-text: #376f9f;
     --tag-preprint-bg: #f3eef9;
@@ -39,29 +39,29 @@
 }
 
 html[data-theme="dark"] {
-    --page-bg: #111214;
-    --surface: #1a1b1f;
-    --surface-hover: #25262b;
-    --surface-active: #303138;
-    --border: #2d2f35;
-    --border-strong: #383a42;
-    --text: #ececf1;
-    --text-secondary: #b6b7bf;
-    --text-muted: #999ba5;
-    --text-faint: #777983;
-    --link: #79b0ff;
-    --link-hover-bg: #1b2b40;
-    --link-hover-border: #416d9f;
-    --theme-switch-bg: #2d2f35;
-    --theme-option-bg: #484a55;
+    --page-bg: #1C1D1F;
+    --surface: #232426;
+    --surface-hover: #2c2d2f;
+    --surface-active: #3a3b3d;
+    --border: rgba(84, 84, 88, 0.65);
+    --border-strong: #48484a;
+    --text: #ffffff;
+    --text-secondary: rgba(235, 235, 245, 0.6);
+    --text-muted: rgba(235, 235, 245, 0.3);
+    --text-faint: rgba(235, 235, 245, 0.18);
+    --link: #0a84ff;
+    --link-hover-bg: rgba(10, 132, 255, 0.14);
+    --link-hover-border: rgba(10, 132, 255, 0.45);
+    --theme-switch-bg: #2c2c2e;
+    --theme-option-bg: #48484a;
     --theme-option-shadow: 0 1px 4px rgba(0, 0, 0, 0.34);
-    --portrait-border: #444750;
+    --portrait-border: #48484a;
     --tag-conference-bg: #1e3448;
     --tag-conference-text: #8ec4ee;
     --tag-preprint-bg: #322840;
     --tag-preprint-text: #c1a8de;
-    --tag-venue-bg: #2a2d32;
-    --tag-venue-text: #b4bac2;
+    --tag-venue-bg: #2c2c2e;
+    --tag-venue-text: #aeaeb2;
     --tag-track-bg: #20372a;
     --tag-track-text: #96c9a5;
 }
@@ -338,7 +338,7 @@ a:hover {
 }
 
 .site-navbar .nav-link:focus-visible {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35);
 }
 
 .site-navbar .nav-item.active .nav-link {
@@ -417,7 +417,7 @@ html[data-theme="dark"] .theme-switch::before {
 }
 
 .theme-option:focus-visible {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35);
 }
 
 .theme-option[aria-pressed="true"] {
@@ -431,11 +431,11 @@ html[data-theme="dark"] .theme-switch::before {
 }
 
 .theme-option[data-theme-value="light"][aria-pressed="true"] .theme-icon {
-    color: #d89a00;
+    color: #ff9f0a;
 }
 
 .theme-option[data-theme-value="dark"][aria-pressed="true"] .theme-icon {
-    color: #79b0ff;
+    color: #0a84ff;
 }
 
 .no-break {

@@ -21,20 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&amp;display=swap" rel="stylesheet">
     <script>
         (function () {
-            var theme = 'light';
-            try {
-                var savedTheme = localStorage.getItem('site-theme');
-                theme = savedTheme === 'light' || savedTheme === 'dark'
-                    ? savedTheme
-                    : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            } catch (error) {
-                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
+            var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.style.colorScheme = theme;
         }());
     </script>
-    <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body class="bg-light">
     {% include navbar.html %}
