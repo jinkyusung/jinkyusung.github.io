@@ -21,18 +21,18 @@ short_bio: >-
     <li><strong>Mathematics for Machine Learning</strong></li>
   </ul>
 
-portrait_url: /assets/images/photos/selfie.jpeg
+portrait_url: /assets/images/selfie.jpeg
 portrait_caption: Jinkyu Sung
 
 education:
 - name: Seoul National University
-  logo: /assets/images/badges/snu_logo.png
+  logo: /assets/images/snu_logo.png
   position: >-
     Ph.D. Student in Artificial Intelligence<br/>
     Advised by Prof. Joonseok Lee
   date: Feb. 2025 – Present
 - name: Sogang University
-  logo: /assets/images/badges/sogang_logo.svg
+  logo: /assets/images/sogang_logo.svg
   position: >-
     B.S.E. in Computer Science<br/>
     B.S. in Mathematics
