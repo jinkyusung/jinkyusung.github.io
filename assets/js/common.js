@@ -36,11 +36,9 @@
         themeMedia.addListener(followSystemTheme);
     }
 
-    const navbarBrand = document.querySelector('.navbar-brand');
     const siteNavigation = document.querySelector('.site-navigation');
     const pageLinks = siteNavigation.querySelectorAll('.nav-link');
     const pageCache = new Map();
-    let navbarFontReady = !document.fonts;
 
     function normalizedPath(url) {
         return new URL(url, window.location.href).pathname.replace(/\/$/, '') || '/';
@@ -100,7 +98,6 @@
                 window.history.pushState({}, '', destination.href);
             }
             window.scrollTo(0, 0);
-            updateNavbarBrand();
         }).catch(function () {
             window.location.assign(destination.href);
         }).finally(function () {
@@ -132,33 +129,4 @@
         renderPage(window.location.href, false);
     });
 
-    function updateNavbarBrand() {
-        const profileName = document.querySelector('#profile-name-container');
-        const themeToggle = document.querySelector('.theme-toggle-item');
-        const minimumGap = 12;
-        const brandBounds = navbarBrand.getBoundingClientRect();
-        const navigationBounds = siteNavigation.getBoundingClientRect();
-        const themeBounds = themeToggle.getBoundingClientRect();
-        const hasRoomForName =
-            brandBounds.left >= navigationBounds.right + minimumGap &&
-            brandBounds.right <= themeBounds.left - minimumGap;
-
-        navbarBrand.classList.toggle(
-            'show-name',
-            navbarFontReady &&
-            (!profileName || profileName.getBoundingClientRect().bottom < 0) &&
-            hasRoomForName
-        );
-    }
-
-    if (document.fonts) {
-        document.fonts.ready.then(function () {
-            navbarFontReady = true;
-            updateNavbarBrand();
-        });
-    }
-
-    updateNavbarBrand();
-    window.addEventListener('scroll', updateNavbarBrand, { passive: true });
-    window.addEventListener('resize', updateNavbarBrand, { passive: true });
 }());
