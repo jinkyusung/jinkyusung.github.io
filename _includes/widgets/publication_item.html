@@ -14,7 +14,7 @@
     <div class="publication-card-header">
         <div class="publication-tags">
             <span class="publication-type publication-type-{{ item.type | slugify }}">{{ item.type }}</span>
-            {% if venue_alias != "" %}<span class="publication-venue-tag">{{ venue_alias }} {{ item.pub_date }}</span>{% endif %}
+            {% if venue_alias != "" %}<span class="publication-venue-tag">{{ venue_alias }}</span>{% endif %}
             {% if item.track %}<span class="publication-track-tag">{{ item.track }}</span>{% endif %}
         </div>
         {% if has_links %}
@@ -41,5 +41,5 @@
     </div>
     <h6 class="publication-title">{{ item.title }}</h6>
     <p class="publication-authors pub-meta text-muted">{% include widgets/author_list.html authors=item.authors %}</p>
-    <p class="publication-venue pub-meta text-muted">{{ item.pub }}</p>
+    <p class="publication-venue pub-meta text-muted">{{ item.pub }}{% if item.pub_date %}, {{ item.pub_date }}{% endif %}</p>
 </article>

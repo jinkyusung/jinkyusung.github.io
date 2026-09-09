@@ -75,7 +75,7 @@ body {
     font-weight: 400;
     letter-spacing: -0.02em;
     line-height: 22px;
-    padding-top: calc(2.8rem + 1rem + 1px + 0.75rem);
+    padding-top: calc(2.8rem + 1rem + 6px);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -145,7 +145,7 @@ strong {
 }
 
 .home-page {
-    padding-top: 26px;
+    padding-top: 22px;
 }
 
 .home-card-row {
@@ -428,8 +428,8 @@ html[data-theme="dark"] .theme-switch::before {
     font-size: 12px;
     gap: 0.2rem 0.75rem;
     justify-content: flex-end;
-    line-height: 18px;
-    margin: 0 0 0.5rem;
+    line-height: 16px;
+    margin: 0 0 6px;
 }
 
 .publication-link {
