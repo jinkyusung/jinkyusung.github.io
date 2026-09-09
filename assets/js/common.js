@@ -133,12 +133,22 @@
 
     function updateNavbarBrand() {
         const profileName = document.querySelector('#profile-name-container');
+        const themeToggle = document.querySelector('.theme-toggle-item');
+        const minimumGap = 12;
+        const brandBounds = navbarBrand.getBoundingClientRect();
+        const navigationBounds = siteNavigation.getBoundingClientRect();
+        const themeBounds = themeToggle.getBoundingClientRect();
+        const hasRoomForName =
+            brandBounds.left >= navigationBounds.right + minimumGap &&
+            brandBounds.right <= themeBounds.left - minimumGap;
+
         navbarBrand.classList.toggle(
             'show-name',
-            !profileName || profileName.getBoundingClientRect().bottom < 0
+            (!profileName || profileName.getBoundingClientRect().bottom < 0) && hasRoomForName
         );
     }
 
     updateNavbarBrand();
     window.addEventListener('scroll', updateNavbarBrand, { passive: true });
+    window.addEventListener('resize', updateNavbarBrand, { passive: true });
 }());

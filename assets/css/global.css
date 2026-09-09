@@ -234,16 +234,6 @@ a:hover {
     pointer-events: auto;
 }
 
-@media (max-width: 576px) {
-    .site-navbar .navbar-brand {
-        max-width: calc(100% - 15rem);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-}
-
-
 .site-navbar .navbar-nav {
     align-items: center;
     background: var(--theme-switch-bg);
