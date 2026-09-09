@@ -173,7 +173,6 @@ strong {
     color: var(--text);
 }
 
-.text-profile-bio strong,
 .section-card-body strong {
     font-weight: 600;
 }
@@ -228,6 +227,7 @@ a:hover {
 }
 
 .site-navigation {
+    margin-left: 7px;
     position: relative;
     z-index: 1050;
 }
