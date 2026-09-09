@@ -537,7 +537,7 @@ html[data-theme="dark"] .theme-switch::before {
 .publication-venue-tag,
 .publication-track-tag {
     align-items: center;
-    border: 1px solid var(--border-strong);
+    border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
     border-radius: 999px;
     box-sizing: border-box;
     display: inline-flex;
