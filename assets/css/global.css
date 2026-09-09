@@ -115,7 +115,7 @@ strong {
 }
 
 .card > .card-body > h5 {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 #profile-name-container,
@@ -395,6 +395,7 @@ html[data-theme="dark"] .theme-switch::before {
 
 .org-name {
     font-size: 15px;
+    font-weight: 600;
 }
 
 .text-muted {
