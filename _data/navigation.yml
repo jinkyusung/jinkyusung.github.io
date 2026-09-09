@@ -1,5 +1,7 @@
 pages:
 - name: Home
   url: /
+  icon: fas fa-user-circle
 - name: Publications
   url: /publications
+  icon: book-half

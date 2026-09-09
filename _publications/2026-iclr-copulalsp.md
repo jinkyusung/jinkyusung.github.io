@@ -8,7 +8,8 @@ track:          "Research Track"
 authors:
   - Jinkyu Sung
   - Myunggeum Jee
-  - Joonseok Lee
+  - name: Joonseok Lee
+    corresponding_author: true
 links:
   Paper: https://proceedings.iclr.cc/paper_files/paper/2026/hash/f6712d5191d2501dfc7024389f7bfcdd-Abstract-Conference.html
   GitHub: https://github.com/jinkyusung/CopulaLSP

@@ -8,6 +8,10 @@ navbar_title: Publications
 
 <div class="row">
     <div class="col-12">
+        <p class="publication-author-legend text-muted">
+            <span>* Equal contribution</span>
+            <span>&dagger; Corresponding author</span>
+        </p>
         <div class="publication-list">
             {% for item in sorted_pubs %}
                 {% include widgets/publication_item.html item=item %}

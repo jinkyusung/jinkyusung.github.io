@@ -1,4 +1,7 @@
 {%- for author in include.authors -%}
-    {%- if author == site.data.profile.primary_name -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}
+    {%- assign author_name = author.name | default: author -%}
+    {%- if author_name == site.data.profile.primary_name -%}<strong>{{ author_name }}</strong>{%- else -%}{{ author_name }}{%- endif -%}
+    {%- if author.equal_contributor -%}<sup class="author-mark" title="Equal contribution" aria-label="Equal contribution">*</sup>{%- endif -%}
+    {%- if author.corresponding_author -%}<sup class="author-mark" title="Corresponding author" aria-label="Corresponding author">&dagger;</sup>{%- endif -%}
     {%- unless forloop.last -%}, {% endunless -%}
 {%- endfor -%}

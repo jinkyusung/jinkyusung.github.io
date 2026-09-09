@@ -9,5 +9,6 @@ authors:
   - Junhyeong Park
   - Hyukjun Kwon
   - Jinkyu Sung
-  - Joonseok Lee
+  - name: Joonseok Lee
+    corresponding_author: true
 ---

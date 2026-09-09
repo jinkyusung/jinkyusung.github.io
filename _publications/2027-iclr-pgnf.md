@@ -7,5 +7,6 @@ type:           "Preprint"
 track:          "Research Track"
 authors:
   - Jinkyu Sung
-  - Joonseok Lee
+  - name: Joonseok Lee
+    corresponding_author: true
 ---
