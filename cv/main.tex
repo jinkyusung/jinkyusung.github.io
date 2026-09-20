@@ -20,6 +20,17 @@
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 
+% Publication group headings ("Conference" / "Preprint"). article.cls gives
+% \subsection a large built-in skip that \addvspace maxes against anything the
+% generator emits, so the spacing is set here instead -- these two lengths are
+% the only knobs, and they behave linearly.
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {0.6em}%      space above the heading
+  {0.15em}%     space below the heading
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
 % Google Scholar icon: fontawesome7 ships one, earlier releases do not, and
 % academicons' \aiGoogleScholar needs a Unicode engine -- fall back to a cap.
 \providecommand{\faGoogleScholar}{\faGraduationCap}

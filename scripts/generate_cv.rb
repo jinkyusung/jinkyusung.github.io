@@ -79,14 +79,20 @@ puts "Generating CV sources from _data/*.yml"
 
 # --- Header (name + contact line) -----------------------------------------
 
-# Each entry is [destination, icon, printed label]. Following the website, the
-# e-mail address is printed in full while the rest are named by their service
-# instead of spelling out a URL nobody would type in from paper.
+# Each entry is [destination, icon, printed label]. Addresses somebody may want
+# to type in from paper (e-mail, website) are printed in full, in the monospace
+# face; the rest are named by their service instead of spelling out a URL.
 def contact_entry(kind, profile)
   case kind.to_s
   when 'email'
     value = profile['email']
     value && ["mailto:#{value}", '\\faPaperPlane[solid]', "\\texttt{#{tex(value)}}"]
+  when 'website'
+    value = profile['website'].to_s
+    return nil if value.empty?
+    url = value.start_with?('http') ? value : "https://#{value}"
+    shown = url.sub(%r{\Ahttps?://}, '').sub(%r{/\z}, '')
+    [url, '\\faGlobe', "\\texttt{#{tex(shown)}}"]
   when 'linkedin'
     value = profile['linkedin']
     value && ["https://www.linkedin.com/in/#{value}/", '\\faLinkedin', 'LinkedIn']
@@ -199,17 +205,16 @@ if has_marks
   legend = []
   legend << '$^{*}$ Equal contribution' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['equal_contributor'] } }
   legend << '$^{\\dagger}$ Corresponding author' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['corresponding_author'] } }
-  # Set flush right, clear of the section rule above and tight to the first
-  # group heading below.
+  # Flush right, with a little air below the section rule. How close the first
+  # group heading follows is set by \\subsection's spacing in cv/main.tex.
   pub_body << "\\vspace{0.2em}\n"
   pub_body << "{\\raggedleft\\small\\textit{#{legend.join('\\quad ')}}\\par}\n"
-  pub_body << "\\vspace{-1.1em}\n"
+  pub_body << "\\vspace{-0.9em}\n"
 end
 
 groups.each do |heading, label, items|
   next if items.empty?
-  pub_body << "\\vspace{-2.0em}\n"
-  pub_body << "\\subsection*{\\normalsize {#{heading}}}\n"
+  pub_body << "\\subsection*{#{heading}}\n"
   pub_body << "\\begin{enumerate}[label={[\\textbf{#{label}\\arabic*}]}, leftmargin=2.5em]\n"
   pub_body << items.map { |item| publication_entry(item, AUTHOR_MARKS) }.join("\n")
   pub_body << "\n\\end{enumerate}\n"

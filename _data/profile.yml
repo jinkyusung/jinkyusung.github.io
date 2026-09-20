@@ -8,17 +8,16 @@ primary_name: "Jinkyu Sung"
 navbar_name: "Jinkyu Sung"
 
 email: "jinkyusung@snu.ac.kr"
+website: "https://jinkyusung.github.io"
 linkedin: jinkyusung
 gscholar: -JwproEAAAAJ&hl
 github: jinkyusung
 
 # [CV] Which contact links appear in the CV header line, in this order.
-# Allowed values: email, linkedin, github, gscholar
+# Allowed values: email, website, linkedin, github, gscholar
 cv_header_links:
   - email
-  - gscholar
-  - linkedin
-  - github
+  - website
 
 short_bio_text_justify: true          # [WEB]
 short_bio: >-                         # [WEB]
