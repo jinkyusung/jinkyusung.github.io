@@ -201,14 +201,14 @@ if has_marks
   legend << '$^{\\dagger}$ Corresponding author' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['corresponding_author'] } }
   # Set flush right, clear of the section rule above and tight to the first
   # group heading below.
-  pub_body << "\\vspace{0.35em}\n"
+  pub_body << "\\vspace{0.2em}\n"
   pub_body << "{\\raggedleft\\small\\textit{#{legend.join('\\quad ')}}\\par}\n"
   pub_body << "\\vspace{-1.1em}\n"
 end
 
 groups.each do |heading, label, items|
   next if items.empty?
-  pub_body << "\\vspace{-0.5em}\n"
+  pub_body << "\\vspace{-2.0em}\n"
   pub_body << "\\subsection*{\\normalsize {#{heading}}}\n"
   pub_body << "\\begin{enumerate}[label={[\\textbf{#{label}\\arabic*}]}, leftmargin=2.5em]\n"
   pub_body << items.map { |item| publication_entry(item, AUTHOR_MARKS) }.join("\n")
