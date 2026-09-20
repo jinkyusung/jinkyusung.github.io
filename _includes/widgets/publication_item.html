@@ -1,7 +1,11 @@
 {% assign item = include.item %}
 {% assign venue_alias = "" %}
-{% if item.type == "Conference" and item.pub contains "(" %}
-{% assign venue_alias = item.pub | split: "(" | last | replace: ")", "" %}
+{% if item.type == "Conference" %}
+{% if item.venue_short %}
+{% assign venue_alias = item.venue_short %}
+{% elsif item.venue contains "(" %}
+{% assign venue_alias = item.venue | split: "(" | last | replace: ")", "" %}
+{% endif %}
 {% endif %}
 {% assign has_links = false %}
 {% for link in item.links %}
@@ -41,5 +45,5 @@
     </div>
     <h6 class="publication-title">{{ item.title }}</h6>
     <p class="publication-authors pub-meta text-muted">{% include widgets/author_list.html authors=item.authors %}</p>
-    <p class="publication-venue pub-meta text-muted">{{ item.pub }}{% if item.pub_date %}, {{ item.pub_date }}{% endif %}</p>
+    <p class="publication-venue pub-meta text-muted">{% if item.type == "Preprint" %}Submitted to {% endif %}{{ item.venue }}{% if item.year %}, {{ item.year }}{% endif %}</p>
 </article>

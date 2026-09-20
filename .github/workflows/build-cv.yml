@@ -1,0 +1,72 @@
+# Keeps the published CV PDF in sync with the data that drives the website.
+#
+# Whenever anything under _data/ (or the CV template itself) changes on main,
+# the LaTeX sources are regenerated, compiled, and the resulting PDF is
+# committed back to assets/cv/ so GitHub Pages serves the current version.
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_data/**'
+      - 'cv/**'
+      - 'scripts/generate_cv.rb'
+      - 'scripts/build_cv.sh'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-cv
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate LaTeX sources from _data/*.yml
+        run: ruby scripts/generate_cv.rb
+
+      - name: Compile the CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: cv
+          latexmk_shell_escape: false
+          args: -pdf -interaction=nonstopmode -halt-on-error -outdir=build
+
+      - name: Copy the PDF next to the site assets
+        run: |
+          output_path="$(ruby -ryaml -e '
+            pages = (YAML.load_file("_data/navigation.yml")["pages"] rescue []) || []
+            entry = pages.find { |p| p["download"] } ||
+                    pages.find { |p| p["name"].to_s.downcase == "cv" }
+            print((entry && entry["url"].to_s.sub(%r{\A/}, "")).to_s)
+          ')"
+          output_path="${output_path:-assets/cv/Jinkyu_Sung_CV.pdf}"
+          mkdir -p "$(dirname "$output_path")"
+          cp cv/build/main.pdf "$output_path"
+          echo "OUTPUT_PATH=$output_path" >> "$GITHUB_ENV"
+
+      - name: Commit the refreshed PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$OUTPUT_PATH"
+          if git diff --cached --quiet; then
+            echo "CV is already up to date."
+          else
+            git commit -m "Rebuild CV from _data [skip ci]"
+            git push
+          fi
+
+      - name: Upload the CV as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: ${{ env.OUTPUT_PATH }}

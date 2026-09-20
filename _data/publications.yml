@@ -1,0 +1,70 @@
+# =============================================================================
+# Publications — single source of truth for the website and the CV.
+#
+# type   : "Conference" or "Preprint". A Preprint is rendered as
+#          "Submitted to <venue>, <year>" on both the website and the CV.
+# date   : YYYY-MM-DD, used for sorting (newest first) on both outputs.
+# authors: a bare name, or a mapping with `corresponding_author: true`
+#          / `equal_contributor: true`. The name matching
+#          `profile.primary_name` is automatically bolded.
+# links  : website-only; label -> URL.
+# =============================================================================
+
+- title: "Continuous-Time Sequential Recommendation via Personalized Gated Neural Flow"
+  type: Preprint
+  venue: "International Conference on Learning Representations (ICLR)"
+  venue_short: "ICLR"
+  year: 2027
+  date: "2027-01-21"
+  track: Research Track
+  authors:
+    - Jinkyu Sung
+    - name: Joonseok Lee
+      corresponding_author: true
+
+- title: "When Co-occurrence is Not Enough: Principled Signal Construction and Alignment in Sequential Recommendation"
+  type: Preprint
+  venue: "ACM International Conference on Web Search and Data Mining (WSDM)"
+  venue_short: "WSDM"
+  year: 2027
+  date: "2026-12-25"
+  track: Research Track
+  authors:
+    - Junhyeong Park
+    - Hyukjun Kwon
+    - Jinkyu Sung
+    - name: Joonseok Lee
+      corresponding_author: true
+
+- title: "A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction"
+  type: Conference
+  venue: "International Conference on Learning Representations (ICLR)"
+  venue_short: "ICLR"
+  year: 2026
+  date: "2026-01-21"
+  track: Research Track
+  authors:
+    - Jinkyu Sung
+    - Myunggeum Jee
+    - name: Joonseok Lee
+      corresponding_author: true
+  links:
+    Paper: https://proceedings.iclr.cc/paper_files/paper/2026/hash/f6712d5191d2501dfc7024389f7bfcdd-Abstract-Conference.html
+    GitHub: https://github.com/jinkyusung/CopulaLSP
+
+- title: "Graph Spectral Filtering with Chebyshev Interpolation for Recommendation"
+  type: Conference
+  venue: "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)"
+  venue_short: "SIGIR"
+  year: 2025
+  date: "2025-07-13"
+  track: Research Track
+  authors:
+    - Chanwoo Kim
+    - Jinkyu Sung
+    - Yebonn Han
+    - name: Joonseok Lee
+      corresponding_author: true
+  links:
+    Paper: https://dl.acm.org/doi/epdf/10.1145/3726302.3729991
+    GitHub: https://github.com/chanwoo0806/ChebyCF

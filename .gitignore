@@ -8,4 +8,8 @@ vendor/
 Gemfile.lock
 
 .DS_Store
-Jinkyusung_CV/
+
+# CV build artifacts: both are regenerated from _data/*.yml by
+# scripts/build_cv.sh. Only the compiled PDF (assets/cv/*.pdf) is committed.
+cv/build/
+cv/generated/

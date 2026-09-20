@@ -5,11 +5,10 @@ markdown: kramdown
 
 exclude:
   - .bundle
+  - cv            # LaTeX sources of the CV (the compiled PDF lives in assets/cv)
   - Gemfile
   - Gemfile.lock
+  - README.md
+  - scripts
   - test.sh
   - vendor
-
-collections:
-  publications:
-    output: false

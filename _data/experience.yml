@@ -1,11 +1,18 @@
+# Work experience — shared by the website and the CV.
+# [CV] location   : shown in the PDF only.
+# Every other field is rendered on both.
+
 - name: Daangn (Karrot)
   logo: /assets/images/logo_karrot.svg
+  location: "Seoul, South Korea"
   position: Software Engineer, Machine Learning (Intern)
   dept: ML Foundation
   date: Oct. 2026 – Present
 
 - name: Korea Institute of Science and Technology (KIST)
   logo: /assets/images/logo_kist.svg
+  location: "Seoul, South Korea"
   position: Undergraduate Researcher
   dept: Sensor System Research Center
+  description: AI-based Multisensory Enhancement Program Development for Disabled Children
   date: Dec. 2023 – Feb. 2024

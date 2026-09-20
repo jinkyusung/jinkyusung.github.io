@@ -1,4 +1,7 @@
-- name: "Academic Research Support Program for Science and Engineering (NRF Korea)"
+# Research grants — shared by the website and the CV.
+
+- name: "Academic Research Support Program for Science and Engineering"
+  funder: "National Research Foundation of Korea"
   role: Principal Investigator
   amount: "KRW 12,000,000"
   date: "Sep. 2025 – Aug. 2026"

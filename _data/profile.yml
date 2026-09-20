@@ -1,3 +1,9 @@
+# =============================================================================
+# Personal profile — single source of truth for BOTH the website and the CV.
+# Edit this file only; `scripts/build_cv.sh` regenerates the LaTeX CV from it.
+# Fields marked [CV] are used by the PDF only, [WEB] by the website only.
+# =============================================================================
+
 primary_name: "Jinkyu Sung"
 navbar_name: "Jinkyu Sung"
 
@@ -6,34 +12,44 @@ linkedin: jinkyusung
 gscholar: -JwproEAAAAJ&hl
 github: jinkyusung
 
-short_bio_text_justify: true
-short_bio: >-
+# [CV] Which contact links appear in the CV header line, in this order.
+# Allowed values: email, linkedin, github, gscholar
+cv_header_links:
+  - email
+  - linkedin
+  - github
+
+short_bio_text_justify: true          # [WEB]
+short_bio: >-                         # [WEB]
   <p>
     I'm a Ph.D. student in Artificial Intelligence at <strong><a href="https://snuai.snu.ac.kr/" target="_blank">Seoul National University</a></strong>,
     advised by <a href="https://joonseok.net/" target="_blank">Prof. Joonseok Lee</a> at the
     <strong><a href="https://vip.snu.ac.kr/" target="_blank">Visual Information Processing Lab (VIPLab)</a></strong>.
   </p>
-  <p class="mb-1">My research interests include:</p>
-  <ul class="mb-0">
-    <li><strong>Recommendation Systems</strong></li>
-    <li><strong>Dynamical Systems</strong></li>
-    <li><strong>Graph Representation Learning</strong></li>
-    <li><strong>Mathematics for Machine Learning</strong></li>
-  </ul>
 
-portrait_url: /assets/images/selfie.jpeg
-portrait_caption: Jinkyu Sung
+research_interests_intro: "My research interests include:"   # [WEB]
+research_interests:
+  - Recommendation Systems
+  - Dynamical Systems
+  - Graph Representation Learning
+  - Mathematics for Machine Learning
+
+portrait_url: /assets/images/selfie.jpeg     # [WEB]
+portrait_caption: Jinkyu Sung                # [WEB]
 
 education:
 - name: Seoul National University
-  logo: /assets/images/logo_snu.png
-  position: >-
-    Ph.D. Student in Artificial Intelligence<br/>
-    Advised by Prof. Joonseok Lee
-  date: Feb. 2025 – Present
+  logo: /assets/images/logo_snu.png          # [WEB]
+  location: "Seoul, South Korea"             # [CV]
+  lines:
+    - "Ph.D. Student in Artificial Intelligence"
+    - "Visual Information Processing Lab (VIPLab)"
+    - "Advised by Prof. Joonseok Lee"
+  date: "Feb. 2025 – Present"
 - name: Sogang University
-  logo: /assets/images/logo_sogang.svg
-  position: >-
-    B.S.E. in Computer Science<br/>
-    B.S. in Mathematics
-  date: Feb. 2019 – Feb. 2025
+  logo: /assets/images/logo_sogang.svg       # [WEB]
+  location: "Seoul, South Korea"             # [CV]
+  lines:
+    - "B.S.E. in Computer Science"
+    - "B.S. in Mathematics"
+  date: "Feb. 2019 – Feb. 2025"

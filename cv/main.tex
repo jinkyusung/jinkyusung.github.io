@@ -1,0 +1,36 @@
+% ---------------------------------------------------------------------------
+% Jinkyu Sung -- Curriculum Vitae
+%
+% The content of this document is NOT written here: every section under
+% `generated/` is produced by `scripts/generate_cv.rb` from the `_data/*.yml`
+% files that also feed the website. Edit the YAML, then run:
+%
+%     ./scripts/build_cv.sh
+%
+% Only the layout below is meant to be edited by hand.
+% ---------------------------------------------------------------------------
+\documentclass{resume}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+\usepackage[left=0.6in,top=0.5in,right=0.6in,bottom=0.55in]{geometry}
+
+% Vertical rhythm (tightened so the CV stays on a single page)
+\def\nameskip{\medskip}
+\def\sectionskip{\smallskip}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+% Name and contact line (from _data/profile.yml)
+\input{generated/header}
+
+\begin{document}
+
+\input{generated/research_interest}
+\input{generated/education}
+\input{generated/experience}
+\input{generated/publication}
+\input{generated/research_grant}
+\input{generated/academic_service}
+\input{generated/award}
+
+\end{document}

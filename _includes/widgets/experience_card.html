@@ -15,7 +15,7 @@
                         <div class="flex-grow-1">
                             <div class="org-name"><strong>{{ item.name }}</strong></div>
                             <div class="pub-meta d-flex align-items-end text-muted">
-                                <div>{{ item.position }}</div>
+                                <div>{% for line in item.lines %}{{ line }}{% unless forloop.last %}<br/>{% endunless %}{% endfor %}</div>
                                 <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             <div class="org-name"><strong>{{ item.name }}</strong></div>
                             <div class="pub-meta text-muted">{{ item.dept }}</div>
                             <div class="pub-meta d-flex align-items-end text-muted">
-                                <div>{{ item.position }}</div>
+                                <div>{{ item.position }}{% if item.description %}<br/>{{ item.description }}{% endif %}</div>
                                 <div class="ml-auto no-break"><em>{{ item.date }}</em></div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                     {% for item in site.data.research_grants %}
                     <li class="mb-3">
                         <div><strong>{{ item.name }}</strong></div>
-                        <div class="pub-meta text-muted">{{ item.role }}</div>
+                        <div class="pub-meta text-muted">{{ item.role }}{% if item.funder %}, {{ item.funder }}{% endif %}</div>
                         <div class="pub-meta d-flex align-items-end text-muted">
                             <div>{{ item.amount }}</div>
                             <div class="ml-auto no-break"><em>{{ item.date }}</em></div>

@@ -1,3 +1,7 @@
+# Top navigation bar.
+# The CV entry's `url` is also where `scripts/build_cv.sh` writes the compiled
+# PDF, so changing the path here moves the file for both.
+
 pages:
 - name: Home
   url: /
@@ -5,3 +9,7 @@ pages:
 - name: Publications
   url: /publications
   icon: book-half
+- name: CV
+  url: /assets/cv/Jinkyu_Sung_CV.pdf
+  icon: file-pdf
+  download: true
