@@ -92,7 +92,8 @@ def contact_entry(kind, profile)
     return nil if value.empty?
     url = value.start_with?('http') ? value : "https://#{value}"
     shown = url.sub(%r{\Ahttps?://}, '').sub(%r{/\z}, '')
-    [url, '\\faGlobe', "\\texttt{#{tex(shown)}}"]
+    # Outline user glyph, matching the Home tab of the website itself.
+    [url, '\\faUser[regular]', "\\texttt{#{tex(shown)}}"]
   when 'linkedin'
     value = profile['linkedin']
     value && ["https://www.linkedin.com/in/#{value}/", '\\faLinkedin', 'LinkedIn']
