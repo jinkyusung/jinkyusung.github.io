@@ -16,6 +16,7 @@ github: jinkyusung
 # Allowed values: email, linkedin, github, gscholar
 cv_header_links:
   - email
+  - gscholar
   - linkedin
   - github
 

@@ -79,30 +79,32 @@ puts "Generating CV sources from _data/*.yml"
 
 # --- Header (name + contact line) -----------------------------------------
 
+# Each entry is [destination, icon, printed label]. Following the website, the
+# e-mail address is printed in full while the rest are named by their service
+# instead of spelling out a URL nobody would type in from paper.
 def contact_entry(kind, profile)
   case kind.to_s
   when 'email'
     value = profile['email']
-    value && ["mailto:#{value}", '\\faPaperPlane[solid]', value]
+    value && ["mailto:#{value}", '\\faPaperPlane[solid]', "\\texttt{#{tex(value)}}"]
   when 'linkedin'
     value = profile['linkedin']
-    value && ["https://www.linkedin.com/in/#{value}/", '\\faLinkedin',
-              "linkedin.com/in/#{value}"]
+    value && ["https://www.linkedin.com/in/#{value}/", '\\faLinkedin', 'LinkedIn']
   when 'github'
     value = profile['github']
-    value && ["https://github.com/#{value}", '\\faGithub', "github.com/#{value}"]
+    value && ["https://github.com/#{value}", '\\faGithub', 'GitHub']
   when 'gscholar'
     value = profile['gscholar'].to_s
     return nil if value.empty?
     url = value.start_with?('http') ? value :
           "https://scholar.google.com/citations?user=#{value.split('&').first}"
-    [url, '\\aiGoogleScholar', 'Google Scholar']
+    [url, '\\faGoogleScholar', 'Google Scholar']
   end
 end
 
 entries = Array(profile['cv_header_links']).map { |k| contact_entry(k, profile) }.compact
 address = entries.map do |url, icon, label|
-  "    \\href{#{tex_url(url)}}{#{icon}\\ \\ \\texttt{#{tex(label)}}}"
+  "    \\href{#{tex_url(url)}}{#{icon}\\ \\ #{label}}"
 end.join("\n    \\quad\n")
 
 write('header.tex', <<~TEX)
@@ -185,9 +187,11 @@ has_marks = AUTHOR_MARKS && sorted_pubs.any? do |p|
   Array(p['authors']).any? { |a| a.is_a?(Hash) && (a['corresponding_author'] || a['equal_contributor']) }
 end
 
+# Headings reuse the `type` labels of _data/publications.yml verbatim, so the
+# CV and the website name the same group the same way.
 groups = [
-  ['Refereed Conferences', 'C', sorted_pubs.select { |p| p['type'].to_s == 'Conference' }],
-  ['Preprints',            'P', sorted_pubs.select { |p| p['type'].to_s == 'Preprint' }]
+  ['Conference', 'C', sorted_pubs.select { |p| p['type'].to_s == 'Conference' }],
+  ['Preprint',   'P', sorted_pubs.select { |p| p['type'].to_s == 'Preprint' }]
 ]
 
 pub_body = +''
@@ -195,7 +199,11 @@ if has_marks
   legend = []
   legend << '$^{*}$ Equal contribution' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['equal_contributor'] } }
   legend << '$^{\\dagger}$ Corresponding author' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['corresponding_author'] } }
-  pub_body << "\\vspace{-0.5em}\n{\\small\\textit{#{legend.join('\\quad ')}}}\n"
+  # Set flush right, clear of the section rule above and tight to the first
+  # group heading below.
+  pub_body << "\\vspace{0.35em}\n"
+  pub_body << "{\\raggedleft\\small\\textit{#{legend.join('\\quad ')}}\\par}\n"
+  pub_body << "\\vspace{-1.1em}\n"
 end
 
 groups.each do |heading, label, items|
