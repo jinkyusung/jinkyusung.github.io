@@ -178,6 +178,12 @@ def author_list(authors, marks)
   end
 end
 
+# Spacing of the `* / †` legend inside the Publications section.
+# Measured at 150 dpi: the legend sits 3.8pt under the section rule and its
+# descenders reach about a third of the way into the "Conference" line.
+LEGEND_SKIP_ABOVE = '-0.28em'  # between the section rule and the legend
+LEGEND_SKIP_BELOW = '-0.81em'  # negative: the first group heading rides up into it
+
 def publication_entry(item, marks)
   venue = tex(item['venue'])
   venue = "Submitted to #{venue}" if item['type'].to_s == 'Preprint'
@@ -205,11 +211,15 @@ if has_marks
   legend = []
   legend << '$^{*}$ Equal contribution' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['equal_contributor'] } }
   legend << '$^{\\dagger}$ Corresponding author' if sorted_pubs.any? { |p| Array(p['authors']).any? { |a| a.is_a?(Hash) && a['corresponding_author'] } }
-  # Flush right, with a little air below the section rule. How close the first
-  # group heading follows is set by \\subsection's spacing in cv/main.tex.
-  pub_body << "\\vspace{0.2em}\n"
+  # Flush right, tucked under the section rule. The trailing skip is followed by
+  # a zero-height rule so that \\subsection's own \\addvspace cannot swallow it:
+  # without the rule LaTeX keeps only the larger of the two and the negative
+  # value silently does nothing. Net gap = LEGEND_SKIP_BELOW + the 0.6em set in
+  # cv/main.tex, so a value below -0.6em lets the heading ride up into the
+  # legend's line.
+  pub_body << "\\vspace{#{LEGEND_SKIP_ABOVE}}\n"
   pub_body << "{\\raggedleft\\small\\textit{#{legend.join('\\quad ')}}\\par}\n"
-  pub_body << "\\vspace{-0.9em}\n"
+  pub_body << "\\vspace{#{LEGEND_SKIP_BELOW}}\\hrule height 0pt\\relax\n"
 end
 
 groups.each do |heading, label, items|
