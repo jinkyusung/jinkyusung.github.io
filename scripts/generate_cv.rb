@@ -86,7 +86,7 @@ def contact_entry(kind, profile)
   case kind.to_s
   when 'email'
     value = profile['email']
-    value && ["mailto:#{value}", '\\faPaperPlane[solid]', "\\texttt{#{tex(value)}}"]
+    value && ["mailto:#{value}", '\\faPaperPlane[regular]', "\\texttt{#{tex(value)}}"]
   when 'website'
     value = profile['website'].to_s
     return nil if value.empty?

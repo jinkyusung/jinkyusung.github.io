@@ -8,7 +8,7 @@ pages:
   icon: far fa-user
 - name: Publications
   url: /publications
-  icon: book-half
+  icon: book
 - name: CV
   url: /assets/cv/Jinkyu_Sung_CV.pdf
   icon: file-pdf
