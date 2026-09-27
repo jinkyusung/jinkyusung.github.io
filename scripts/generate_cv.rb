@@ -195,7 +195,9 @@ def publication_entry(item, marks)
   "    \\textit{#{venue}}#{year}."
 end
 
-sorted_pubs = Array(publications).sort_by { |p| p['date'].to_s }.reverse
+# Preprints stay in _data/publications.yml but are left out of the CV.
+sorted_pubs = Array(publications).reject { |p| p['type'].to_s == 'Preprint' }
+                                 .sort_by { |p| p['date'].to_s }.reverse
 has_marks = AUTHOR_MARKS && sorted_pubs.any? do |p|
   Array(p['authors']).any? { |a| a.is_a?(Hash) && (a['corresponding_author'] || a['equal_contributor']) }
 end
