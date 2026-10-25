@@ -9,6 +9,18 @@
 #          `profile.primary_name` is automatically bolded.
 # links  : website-only; label -> URL.
 # =============================================================================
+- title: "Preference-aligned Stochastic Flow Maps for Sequential Recommendation"
+  type: Preprint
+  venue: "ACM Web Conference (WWW)"
+  venue_short: "WWW"
+  year: 2027
+  date: "2027-04-25"
+  track: Research Track
+  authors:
+    - Yebonn Han
+    - Jinkyu Sung
+    - name: Joonseok Lee
+      corresponding_author: true
 
 - title: "Continuous-Time Sequential Recommendation via Personalized Gated Neural Flow"
   type: Preprint
