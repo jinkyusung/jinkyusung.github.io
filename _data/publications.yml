@@ -9,6 +9,18 @@
 #          `profile.primary_name` is automatically bolded.
 # links  : website-only; label -> URL.
 # =============================================================================
+- title: "Scalable Item Attribute Simulation with Cross-Denoising"
+  type: Preprint
+  venue: "International Conference on Machine Learning (ICML)"
+  venue_short: "ICML"
+  year: 2027
+  date: "2027-07-01"
+  track: Research Track
+  authors:
+    - Jinkyu Sung
+    - name: Joonseok Lee
+      corresponding_author: true
+
 - title: "Preference-aligned Stochastic Flow Maps for Sequential Recommendation"
   type: Preprint
   venue: "ACM Web Conference (WWW)"
@@ -34,12 +46,12 @@
     - name: Joonseok Lee
       corresponding_author: true
 
-- title: "When Co-occurrence is Not Enough: Principled Signal Construction and Alignment in Sequential Recommendation"
+- title: "When Co-occurrence is Not Enough: A Principled Signal Construction and Alignment in Sequential Recommendation"
   type: Conference
   venue: "Findings of ACM International Conference on Web Search and Data Mining (WSDM)"
   venue_short: "WSDM Findings"
   year: 2027
-  date: "2026-12-25"
+  date: "2026-11-04"
   track: Research Track
   authors:
     - Junhyeong Park
