@@ -35,9 +35,9 @@
       corresponding_author: true
 
 - title: "When Co-occurrence is Not Enough: Principled Signal Construction and Alignment in Sequential Recommendation"
-  type: Preprint
-  venue: "ACM International Conference on Web Search and Data Mining (WSDM)"
-  venue_short: "WSDM"
+  type: Conference
+  venue: "Findings of ACM International Conference on Web Search and Data Mining (WSDM)"
+  venue_short: "WSDM Findings"
   year: 2027
   date: "2026-12-25"
   track: Research Track
